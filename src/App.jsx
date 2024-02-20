@@ -4,7 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Header from "./Header";
 import Footer from "./Footer";
-import Demo from "./Demo";
+import Places from "./Places";
+import Random from "./Random";
+
+
 const App = () => {
   return (
     <>
@@ -12,7 +15,9 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/demo" element={<Demo />} />
+          <Route path="/places" element= {<Places/>} />
+          <Route path="/random" element= {<Random/>} />
+         
         </Routes>
       </BrowserRouter>
       <Footer />
