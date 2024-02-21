@@ -30,7 +30,7 @@ const Slider = () => {
       borderRadius: '10px',
       height: 'auto',
       width: '370px',
-      margin: '50px 15px 15px 0',
+      margin: '50px 5px 15px 0',
       marginBottom: '60px',
       float: 'left',
   };
