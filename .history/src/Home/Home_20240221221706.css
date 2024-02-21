@@ -33,18 +33,18 @@ body {
   color: var(--f-main);
 }
 
-.section1 {
-  background-image: url(img/white\ houses\ at\ sea-side.jpg);
+.bg-img img {
   background-repeat: no-repeat;
   background-size: cover;
   height: 650px;
   transition: opacity 0.3s ease;
   position: relative;
+  z-index: 12;
 }
 
 .overlay-black {
   height: 650px;
-  background-color: rgba(0, 0, 0, 0.202);
+  background-color: rgb(0, 0, 0);
   z-index: 10;
   display: flex;
   position: absolute;

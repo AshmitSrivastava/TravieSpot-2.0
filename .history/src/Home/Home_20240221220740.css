@@ -44,11 +44,10 @@ body {
 
 .overlay-black {
   height: 650px;
-  background-color: rgba(0, 0, 0, 0.202);
+  background-color: rgba(0, 0, 0, 0.358);
   z-index: 10;
   display: flex;
   position: absolute;
-  width: 100%;
 }
 
 .navbar {

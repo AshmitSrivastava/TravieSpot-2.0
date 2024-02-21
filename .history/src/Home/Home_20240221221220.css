@@ -40,6 +40,7 @@ body {
   height: 650px;
   transition: opacity 0.3s ease;
   position: relative;
+  z-index: 10;
 }
 
 .overlay-black {

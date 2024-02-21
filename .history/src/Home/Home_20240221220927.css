@@ -43,8 +43,8 @@ body {
 }
 
 .overlay-black {
-  height: 650px;
-  background-color: rgba(0, 0, 0, 0.202);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.845);
   z-index: 10;
   display: flex;
   position: absolute;
