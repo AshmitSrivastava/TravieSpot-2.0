@@ -20,7 +20,8 @@ const Places = () => {
       },
       headers: {
         accept: 'application/json',
-        Authorization: 'fsq3PqGfQg5Q8at1C3Lki8/KyGCIkLeqMS5fQDvT38BAZZQ='
+        Authorization: import.meta.env.VITE_REACT_APP_FSQ
+
       }
     };
 
