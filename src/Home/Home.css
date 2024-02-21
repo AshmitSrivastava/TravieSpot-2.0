@@ -34,7 +34,7 @@ body {
 }
 
 .section1 {
-  background-image: url(img/white\ houses\ at\ sea-side.jpg);
+  background-image: url(img/whiteHouse.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 650px;
@@ -70,6 +70,7 @@ body {
   font-size: 15px;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
+  color: #000;
 }
 
 .sign-button button:hover {
@@ -129,6 +130,8 @@ body {
   border-radius: 20px;
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
+  color: #000;
+  border: 2px solid black;
 }
 
 .button-text-sec2 button:hover {
