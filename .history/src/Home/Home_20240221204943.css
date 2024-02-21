@@ -28,7 +28,7 @@ body {
   margin: 0;
 }
 
-.main-body {
+.wrapper {
   font-family: var(--ff-sec1-medium);
   color: var(--f-main);
 }
@@ -45,44 +45,37 @@ body {
   background-color: transparent;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 80px;
   padding: 20px;
 }
 
-.sign-button button {
-  padding: 10px 17px;
+.navbar button {
   background-color: #fff;
   border-radius: 20px;
   border: none;
   cursor: pointer;
   font-size: 15px;
+  width: 100px;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sign-button button:hover {
+.navbar button:hover,
+.choose-button:hover {
   background-color: #000;
   color: #fff;
 }
 
-.choose-button button {
-  cursor: pointer;
-  padding: 10px 17px;
-  text-align: center;
-  background-color: transparent;
-  border: #fff solid 1px;
+.navbar .choose-button {
+  background-color: #fff;
   border-radius: 20px;
-  font-size: 15px;
+  border: none;
+  cursor: pointer;
+
   font-weight: 600;
-  color: #fff;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.choose-button button:hover {
-  background-color: #fff;
-  color: #000;
+.logo {
+  margin: auto;
 }
 
 .sec1-text {
@@ -90,6 +83,10 @@ body {
   padding: 100px;
   text-align: center;
   font-weight: 700;
+}
+
+.wrapper:hover .section1 {
+  opacity: 0.85;
 }
 
 .section2 {
@@ -113,17 +110,10 @@ body {
 }
 
 .button-text-sec2 button {
-  cursor: pointer;
   margin-top: 40px;
   padding: 10px;
   border-radius: 20px;
   background-color: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-text-sec2 button:hover {
-  background-color: #000;
-  color: #fff;
 }
 
 .image-container {
@@ -168,18 +158,11 @@ span {
 }
 
 .hero-image button {
-  cursor: pointer;
   background-color: #fff;
   font-family: var(--ff-sec1-medium);
   border-radius: 20px;
-  padding: 13px;
+  padding: 10px;
   border: none;
   font-size: 15px;
   font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.hero-image button:hover {
-  background-color: #000;
-  color: #fff;
 }

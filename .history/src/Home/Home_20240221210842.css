@@ -52,14 +52,12 @@ body {
 }
 
 .sign-button button {
-  padding: 10px 17px;
   background-color: #fff;
   border-radius: 20px;
   border: none;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sign-button button:hover {
@@ -68,21 +66,17 @@ body {
 }
 
 .choose-button button {
-  cursor: pointer;
-  padding: 10px 17px;
-  text-align: center;
   background-color: transparent;
   border: #fff solid 1px;
   border-radius: 20px;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .choose-button button:hover {
   background-color: #fff;
-  color: #000;
+  color: transparent;
 }
 
 .sec1-text {
@@ -113,17 +107,10 @@ body {
 }
 
 .button-text-sec2 button {
-  cursor: pointer;
   margin-top: 40px;
   padding: 10px;
   border-radius: 20px;
   background-color: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-text-sec2 button:hover {
-  background-color: #000;
-  color: #fff;
 }
 
 .image-container {
@@ -168,18 +155,11 @@ span {
 }
 
 .hero-image button {
-  cursor: pointer;
   background-color: #fff;
   font-family: var(--ff-sec1-medium);
   border-radius: 20px;
-  padding: 13px;
+  padding: 10px;
   border: none;
   font-size: 15px;
   font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.hero-image button:hover {
-  background-color: #000;
-  color: #fff;
 }

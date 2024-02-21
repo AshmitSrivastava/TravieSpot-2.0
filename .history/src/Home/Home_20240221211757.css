@@ -68,7 +68,6 @@ body {
 }
 
 .choose-button button {
-  cursor: pointer;
   padding: 10px 17px;
   text-align: center;
   background-color: transparent;
