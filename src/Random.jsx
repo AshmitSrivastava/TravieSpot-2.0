@@ -14,12 +14,11 @@ const Random = () => {
       method: 'GET',
       url: 'https://api.foursquare.com/v3/places/search',
       params: {
-        near: location,
-        // Add other necessary parameters
+        query: location 
       },
       headers: {
         accept: 'application/json',
-        Authorization: 'fsq3PqGfQg5Q8at1C3Lki8/KyGCIkLeqMS5fQDvT38BAZZQ=',
+        Authorization: import.meta.env.VITE_REACT_APP_FSQ,
       },
     };
 
@@ -44,7 +43,7 @@ const Random = () => {
 
   return (
     <>
-    <p className='ml-[25%] font-roboto'>
+    <p className='ml-[25%] '>
       <h2 className='text-3xl p-2'>Not sure where to go? Let us pick it for you :)</h2>
       <form onSubmit={handleOnSubmit}>
         <input
@@ -64,7 +63,7 @@ const Random = () => {
         <CardRandom className='top-1/2 left-1/2'
           title={searchResults[randomIndex].name}
           address={searchResults[randomIndex].location.formatted_address}
-          category={searchResults[randomIndex].categories[0]?.name || 'Unknown Category'}
+          category={searchResults[randomIndex].categories[0].name}
           country={searchResults[randomIndex].location.country}
         />
       )}

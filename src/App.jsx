@@ -5,6 +5,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Places from "./Places";
 import Random from "./Random";
+import Shop from "./Shop";
+import ShopCart from "./ShopCart";
+import { CartProvider } from "react-use-cart";
 
 
 const App = () => {
@@ -13,13 +16,16 @@ const App = () => {
 
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/places" element= {<Places/>} />
-          <Route path="/random" element= {<Random/>} />
-         
-        </Routes>
-      </BrowserRouter>
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/places" element={<Places />} />
+            <Route path="/random" element={<Random />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<ShopCart />} />
+          </Routes>
+        </CartProvider>
+      </BrowserRouter>      
       <Footer />
     </>
   );
