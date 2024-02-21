@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from "./Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home/Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Places from "./Places";
@@ -13,7 +14,6 @@ import { CartProvider } from "react-use-cart";
 const App = () => {
   return (
     <>
-
       <BrowserRouter>
         <Header />
         <CartProvider>
