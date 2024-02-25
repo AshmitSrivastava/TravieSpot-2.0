@@ -12,6 +12,8 @@ import { CartProvider } from "react-use-cart";
 import AboutUs from "./AboutUs";
 import Flights from "./Flights";
 import Certificate from "./Certificate";
+import KnowAbout from "./KnowAbout";
+import CityDetail from "./CityDetail";
 
 
 const App = () => {
@@ -29,6 +31,8 @@ const App = () => {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/flights" element={<Flights/>} />
             <Route path="/certificate" element={<Certificate/>} />
+            <Route path="/know" element={<KnowAbout/>} />
+            <Route path="/know/:id" element={<CityDetail />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>      
