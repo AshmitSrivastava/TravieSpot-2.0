@@ -21,7 +21,6 @@ const Places = () => {
       headers: {
         accept: 'application/json',
         Authorization: import.meta.env.VITE_REACT_APP_FSQ
-
       }
     };
 
