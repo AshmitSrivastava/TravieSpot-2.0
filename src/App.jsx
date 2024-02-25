@@ -9,6 +9,9 @@ import Random from "./Random";
 import Shop from "./Shop";
 import ShopCart from "./ShopCart";
 import { CartProvider } from "react-use-cart";
+import AboutUs from "./AboutUs";
+import Flights from "./Flights";
+import Certificate from "./Certificate";
 
 
 const App = () => {
@@ -23,6 +26,9 @@ const App = () => {
             <Route path="/random" element={<Random />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/cart" element={<ShopCart />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/flights" element={<Flights/>} />
+            <Route path="/certificate" element={<Certificate/>} />
           </Routes>
         </CartProvider>
       </BrowserRouter>      

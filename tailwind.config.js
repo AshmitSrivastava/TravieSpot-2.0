@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {},
     fontFamily:{
-      abc:["Roboto"]
+      abc:["Roboto"],
+      PlayfairDisplay:["Playfair Display"]
     }
   },
   plugins: [],

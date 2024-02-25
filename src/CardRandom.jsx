@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CardRandom = ({ title, category, address, country, description }) => {
   return (
     <div className="bg-gray-800 text-white mx-auto my-4 p-6 rounded-lg shadow-lg w-3/4">
