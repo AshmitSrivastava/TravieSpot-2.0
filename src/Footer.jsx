@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { FaSquareXTwitter, FaInstagram, FaGithub,FaLinkedin } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import LogoR from './assets/Images/LogoR.png'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="outer-main">
         <div className="main">
           <div className="flogo">
-            <img src="/Images/p1.png" className="flogo" />
+            <img src={LogoR} className="flogo" />
           </div>
           <div className="box">
             <ul>

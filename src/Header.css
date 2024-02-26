@@ -17,10 +17,16 @@
 
 }
 
+.onav{
+  display: flex;
+  flex-direction: row;
+}
+
 .nav-elements {
   list-style: none;
   display: flex;
-  padding: 1%;
+  flex-direction: row;
+  margin :1rem 1rem 1rem 2rem;
   gap: 5%;
 }
 
@@ -37,7 +43,7 @@
   content: "";
   width: 0px;
   height: 2.5px;
-  background-color: red;
+  background-image:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -52,7 +58,7 @@
 .sign-button button {
   padding: 10px 17px;
   background-color: #fff;
-  border-radius: 30%;
+  border-radius: 5rem;
   border: none;
   cursor: pointer;
   font-size: 15px;
@@ -70,23 +76,24 @@
   cursor: pointer;
   padding: 10px 17px;
   text-align: center;
-  background-color: transparent;
-  border: #fff solid 1px;
-  border-radius: 20px;
+  background-color: black;
+  border: #772d2d solid 0.1rem;
+  border-radius: 5rem;
   font-size: 15px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .choose-button button:hover {
-  background-color: #fff;
-  color: #000;
+  background-image:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  color: black;
+  border: transparent solid 0rem;
 }
 
 .logo {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }

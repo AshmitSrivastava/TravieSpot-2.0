@@ -1,16 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Header.css"
+import LogoR from './assets/Images/LogoR.png'
 
 const Header = () => {
   return (
     <div className='navBar'>
-
+<div className='onav' >
 <NavLink to = '/'>
-        <img src='/Images/p1.png' className='logo'/>
+        <img src={LogoR} className='logo'/>
     </NavLink>
-
-        <ul className='nav-elements'>
+    <ul className='nav-elements'>
             <li>
                 <NavLink to ='/'>Home </NavLink>
             </li>
@@ -26,6 +26,10 @@ const Header = () => {
             <li>
                 <NavLink to ='/contact'>Contact</NavLink>
             </li>
+    </ul>
+    </div>
+
+        
             <div className="choose-button">
                 <button>Choose for me</button>
               </div>
@@ -35,7 +39,7 @@ const Header = () => {
               </div>
            
 
-        </ul>
+        
 
         </div>
    
