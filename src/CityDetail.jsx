@@ -25,11 +25,15 @@ const CityDetail = () => {
           <img src={image} alt={title} />
         </div>
 
-      
-          <div className="info">
+
+        <div className="info">
+          <div className="info-img">
             <img src={image} />
+            <div className="overlay"></div>
+          </div>
+
+          <div className="information">
             <h2>{title}</h2>
-            <h3>Cultural Information</h3>
             <p><span>Language: </span>{cultureInfo.language}</p>
             <p><span>Traditional Food: </span>{cultureInfo.traditionalFood}</p>
             <p><span>Dance Form: </span>{cultureInfo.danceForm}</p>
@@ -39,7 +43,7 @@ const CityDetail = () => {
               <p>{funFact}</p>
             </div>
           </div>
-       
+        </div>
       </div>
     </>
 

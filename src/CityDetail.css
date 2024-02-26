@@ -1,66 +1,56 @@
 /* CityDetail.css */
 
-/* Outer container */
 .outer-div {
-    display: flex; /* Enable horizontal arrangement of child elements */
-    height: 100vh; /* Set full screen height */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.city-img, .info-img {
+    position: relative;
+    width: calc((100vw)/2);
+    height: 100vh;
+}
+
+.city-img img, .info-img img {
     width: 100%;
-    background-color: #f5f5f5; /* Light background color */
-  }
-  
-  /* City image section */
-  .city-img {
-    flex: 1; /* Allocate equal width as info section (assuming 50%) */
-    background-image: url("path/to/default-city-image.jpg"); /* Set default image */
-    background-size: cover; /* Ensure image covers entire section */
-    background-position: center; /* Center image horizontally and vertically */
-    position: relative; /* Enable layering for overlay effects */
-  }
-  
-  .city-img img {
-    opacity: 0.6; /* Adjust overlay opacity for better visibility */
-    position: absolute; /* Position image within the section */
-    top: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-img {
+    position: relative;
+}
+
+.information {
+    background-color: rgba(0, 0, 0, 0.74);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;  /* to cover the whole container */
     left: 0;
     right: 0;
-    bottom: 0; /* Stretch image to fill the entire section */
-  }
-  
-  /* Information section */
-  .info {
-    flex: 1; /* Allocate equal width as city image section */
-    padding: 2rem; /* Add some padding for better visual flow */
-    background-color: #fff; /* White background for content */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-  }
-  
-  .info h2 {
-    font-size: 2rem; /* Large headline for city title */
-    margin-bottom: 1rem; /* Add space below the title */
-    text-align: center; /* Center-align city title */
-  }
-  
-  .info h3 {
-    font-size: 1.2rem; /* Subheading size for "Cultural Information" and "Fun Fact" */
-    margin-bottom: 0.5rem; /* Add space below headings */
-  }
-  
-  .info p {
-    font-size: 1rem; /* Regular text size for cultural information details */
-    margin-bottom: 0.25rem; /* Add small space between information points */
-    line-height: 1.5; /* Adjust line spacing for better readability */
-  }
-  
-  .info span {
-    font-weight: bold; /* Emphasize information labels */
-    margin-right: 0.5rem; /* Add small space after labels */
-  }
-  
-  .ff { /* "Fun Fact" section */
-    margin-top: 1rem; /* Add space above the "Fun Fact" section */
-    border-top: 1px solid #ddd; /* Add a thin border to separate it */
-    padding-top: 0.5rem; /* Add padding above the content */
-  }
-  
+    bottom: 0;
+    color: white; 
+}
+
+.information h2{
+    font-size: 5rem;
+    text-align: center;
+}
+
+.information span
+{
+    color: blue;
+    font-size: 1rem;
+}
+
+.ff h3{
+    color: red;
+}
