@@ -13,15 +13,7 @@ const Home = () => {
         <div className="main-body">
           <div className="section1">
 
-            <div className="navbar">
-              <div className="choose-button">
-                <button>Choose for me</button>
-              </div>
-
-              <div className="sign-button">
-                <button>Sign In</button>
-              </div>
-            </div>
+            
             <div className="sec1-text">
               Discover story-worthy travel moments
             </div>

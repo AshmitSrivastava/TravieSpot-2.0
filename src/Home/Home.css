@@ -51,51 +51,6 @@ body {
   width: 100%;
 }
 
-.navbar {
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  padding: 20px;
-}
-
-.sign-button button {
-  padding: 10px 17px;
-  background-color: #fff;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  color: #000;
-}
-
-.sign-button button:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.choose-button button {
-  cursor: pointer;
-  padding: 10px 17px;
-  text-align: center;
-  background-color: transparent;
-  border: #fff solid 1px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.choose-button button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
 .sec1-text {
   font-size: 100px;
   padding: 100px;

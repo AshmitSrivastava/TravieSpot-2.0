@@ -26,6 +26,14 @@ const Header = () => {
             <li>
                 <NavLink to ='/contact'>Contact</NavLink>
             </li>
+            <div className="choose-button">
+                <button>Choose for me</button>
+              </div>
+
+            <div className="sign-button">
+                <button>Sign In</button>
+              </div>
+           
 
         </ul>
 
