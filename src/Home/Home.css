@@ -120,7 +120,7 @@ span {
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 50px auto;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
