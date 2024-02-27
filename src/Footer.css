@@ -5,12 +5,23 @@
   font-family: sans-serif;
 }
 
+<<<<<<< HEAD
+.outer-main
+{
+    display:flex;
+    flex-direction: column;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+=======
 .outer-main {
   display: flex;
   flex-direction: column;
   width: 100%;
   bottom: 0;
   position: relative;
+>>>>>>> 45124a9559af1904baf4c3115e2cb7ab495d5a2a
 }
 .main {
   width: 100%;

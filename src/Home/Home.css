@@ -122,6 +122,10 @@ span {
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 45124a9559af1904baf4c3115e2cb7ab495d5a2a
   display: flex;
   flex-direction: column;
   justify-content: center;

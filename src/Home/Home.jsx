@@ -2,6 +2,7 @@
 import React from "react";
 import "./Home.css";
 import Slider from "./Slider";
+import Whatsapp from "../Whatsapp";
 
 const Home = () => {
   return (
