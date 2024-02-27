@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import mountains from "./img/mountains.jpg";
-//import Card from "../Card";
+import Card from "../Card";
 import "./Places.css";
 const Places = () => {
   const [query, setQuery] = useState("");
@@ -45,41 +45,38 @@ const Places = () => {
 
   return (
     <>
-      <div className="places-box">
-        <img src={mountains} />
-        <div className="input-container">
-          <form onSubmit={handleOnSubmit}>
-            <div className="cont-1">
-              <input
-                type="text"
-                value={query}
-                onChange={handleQueryOnChange}
-                placeholder="Enter query"
-                className="query-box"
-              />
-              <input
-                type="text"
-                value={city}
-                onChange={handleCityOnChange}
-                placeholder="Enter Location"
-                className="location-box"
-              />
-              <button className="search-button">Search</button>
-            </div>
-          </form>
 
-          <div className="result-container">
-            {searchResults.map((result, index) => (
-              <Card
-                key={index}
-                title={result.name}
-                address={result.location.formatted_address}
-                category={result.categories[0].name}
-                country={result.location.country}
-              />
-            ))}
-          </div>
-        </div>
+      {/* <img src={mountains} /> */}
+      <div className="input-container">
+        <form onSubmit={handleOnSubmit}>
+          <input
+            type="text"
+            value={query}
+            onChange={handleQueryOnChange}
+            placeholder="Enter query"
+            className="query-box"
+          />
+          <input
+            type="text"
+            value={city}
+            onChange={handleCityOnChange}
+            placeholder="Enter Location"
+            className="location-box"
+          />
+          <button className="search-button">Search</button>
+        </form>
+      </div>
+
+      <div className="result-container">
+        {searchResults.map((result, index) => (
+          <Card
+            key={index}
+            title={result.name}
+            address={result.location.formatted_address}
+            category={result.categories[0].name}
+            country={result.location.country}
+          />
+        ))}
       </div>
     </>
   );
