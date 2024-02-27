@@ -8,7 +8,7 @@
 .outer-main {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   bottom: 0;
   position: relative;
 }
@@ -80,7 +80,6 @@
   text-align: center;
   font-size: small;
   padding-bottom: 35px;
-  bottom: 0;
 }
 
 #copy p {
