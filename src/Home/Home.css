@@ -7,6 +7,8 @@ Noto Sans Light 300 - Sec2
 Bebas Nue Regular 400 - Hero img
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --ff-sec1: "Noto Sans", sans-serif;
   --ff-sec1-medium: "Noto Sans Medium", sans-serif;
@@ -120,7 +122,10 @@ span {
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 45124a9559af1904baf4c3115e2cb7ab495d5a2a
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +134,7 @@ span {
 }
 
 .hero-image p {
-  font-family: var(--ff-Hero-Regular, "Bebas Neue", sans-serif);
+  font-family: var(--ff-Hero);
   color: var(--f-main, #fff);
   font-size: 100px;
   text-align: center;
@@ -150,4 +155,7 @@ span {
 .hero-image button:hover {
   background-color: #000;
   color: #fff;
+}
+.slider-div {
+  margin: 60px;
 }

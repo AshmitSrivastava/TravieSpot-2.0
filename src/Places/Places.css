@@ -1,0 +1,83 @@
+/*
+font-family: "Bebas Neue", sans-serif;
+font-family: "Noto Sans", sans-serif;
+
+Noto Sans Medium 500 - Sec1
+Noto Sans Light 300 - Sec2
+Bebas Nue Regular 400 - Hero img
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --ff-sec1: "Noto Sans", sans-serif;
+  --ff-sec1-medium: "Noto Sans Medium", sans-serif;
+  --ff-sec2-light: "Noto Sans Light", sans-serif;
+  --ff-Hero: "Bebas Neue", sans-serif;
+  --f-main: #fff;
+  --f-semi-color: rgb(229, 229, 238);
+  --f-solid-color: #979797;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.places-box {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.places-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.input-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%; /* Ensure the input container takes the full size of the parent */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px); /* Apply a backdrop blur to the input container */
+}
+
+.cont-1 {
+  padding: 10px;
+}
+
+.query-box,
+.location-box {
+  border: 1.7px solid var(--f-solid-color);
+  margin-right: 20px;
+  padding: 8px;
+  background-color: var(--f-semi-color);
+  filter: blur(0px);
+}
+
+.search-button {
+  padding: 10px;
+  width: 117px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: var(--f-semi-color);
+  border: 1.7px solid var(--f-solid-color);
+}
+
+.search-button:hover {
+  background-color: var(--f-solid-color);
+  color: var(--f-main);
+}
