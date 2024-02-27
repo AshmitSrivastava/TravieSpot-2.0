@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-evenly;
   color: rgb(255, 255, 255);
-  background-color: #0f0228;
+  background-color: #131115;
   padding-bottom: 1rem;
 }
 .main li {
@@ -75,7 +75,7 @@
 }
 
 #copy {
-  background-color: #0f0228;
+  background-color: #131115;
   color: white;
   text-align: center;
   font-size: small;
@@ -89,7 +89,7 @@
 .ficons {
   background-color: antiquewhite;
   height: auto;
-  background-color: #0f0228;
+  background-color: #131115;
   color: rgb(255, 254, 254);
   display: flex;
   align-items: center;
@@ -103,6 +103,6 @@
   transition: transform 1s;
 }
 .ficons a:hover {
-  transform: translateY(-20px) scale(1.1);
+  transform: translateY(-16px) scale(1.1);
   color: rgb(255, 255, 0);
 }
