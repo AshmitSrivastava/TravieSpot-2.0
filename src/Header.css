@@ -14,10 +14,9 @@
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-
 }
 
-.onav{
+.onav {
   display: flex;
   flex-direction: row;
 }
@@ -26,15 +25,16 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  margin :1rem 1rem 1rem 2rem;
+  margin: 1rem 1rem 1rem 2rem;
   gap: 5%;
 }
 
 .nav-elements a {
   color: #fcf9f9;
   display: block;
-  padding: 5px;
-  font-size: 23px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 18px;
   text-decoration: none;
   position: relative;
 }
@@ -43,16 +43,20 @@
   content: "";
   width: 0px;
   height: 2.5px;
-  background-image:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-.nav-elements a:hover::after 
- {
-    width: 100%;
-    transition: 0.3s;
+.nav-elements a:hover::after {
+  width: 100%;
+  transition: 0.3s;
 }
 
 .sign-button button {
@@ -70,6 +74,7 @@
 .sign-button button:hover {
   background-color: #000;
   color: #fff;
+  border: 0.1rem solid #fff;
 }
 
 .choose-button button {
@@ -86,7 +91,12 @@
 }
 
 .choose-button button:hover {
-  background-image:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
   color: black;
   border: transparent solid 0rem;
 }
@@ -96,4 +106,10 @@
   height: 80px;
   object-fit: cover;
   /* border-radius: 50%; */
+}
+
+.navbar-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }

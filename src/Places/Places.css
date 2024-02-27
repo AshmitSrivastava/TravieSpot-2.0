@@ -1,0 +1,34 @@
+/*
+font-family: "Bebas Neue", sans-serif;
+font-family: "Noto Sans", sans-serif;
+
+Noto Sans Medium 500 - Sec1
+Noto Sans Light 300 - Sec2
+Bebas Nue Regular 400 - Hero img
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --ff-sec1: "Noto Sans", sans-serif;
+  --ff-sec1-medium: "Noto Sans Medium", sans-serif;
+  --ff-sec2-light: "Noto Sans Light", sans-serif;
+  --ff-Hero: "Bebas Neue", sans-serif;
+  --f-main: #fff;
+  --f-semi-color: rgb(126, 126, 126);
+  --f-solid-color: #000;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.input-container {
+}
