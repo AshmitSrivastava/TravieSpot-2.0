@@ -16,6 +16,7 @@ import KnowAbout from "./KnowAbout";
 import CityDetail from "./CityDetail";
 import UForm from "./UForm";
 import Whatsapp from "./Whatsapp";
+import Services from "./services/Services";
 
 
 const App = () => {
