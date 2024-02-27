@@ -15,6 +15,7 @@ import Certificate from "./Certificate";
 import KnowAbout from "./KnowAbout";
 import CityDetail from "./CityDetail";
 import UForm from "./UForm";
+import Whatsapp from "./Whatsapp";
 
 
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
             <Route path="/uform" element={<UForm />} />
           </Routes>
         </CartProvider>
-      </BrowserRouter>      
+      </BrowserRouter>    
       <Footer />
     </>
   );

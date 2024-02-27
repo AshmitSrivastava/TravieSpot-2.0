@@ -5,6 +5,7 @@ import Sec2_img1 from './img/Sec2_img1.jpg'
 import Sec2_img2 from './img/Sec2_img2.jpg'
 import Sec2_img3 from './img/Sec2_img3.jpg'
 import Slider from "./Slider";
+import Whatsapp from "../Whatsapp";
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Home = () => {
         </div>
 
         <Slider/>
-
+        <Whatsapp/>  
         <div className="hero-image">
           <p>BEST IN TRAVEL 2024</p>
           <button>Discover the winners</button>
