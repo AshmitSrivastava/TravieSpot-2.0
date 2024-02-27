@@ -19,21 +19,34 @@ const CityDetail = () => {
   const { title, image, cultureInfo, funFact } = city;
 
   return (
-    <div>
-      <h2>{title}</h2>
-      <img src={image} alt={title} />
-      <div>
-        <h3>Cultural Information</h3>
-        <p>Language: {cultureInfo.language}</p>
-        <p>Traditional Food: {cultureInfo.traditionalFood}</p>
-        <p>Dance Form: {cultureInfo.danceForm}</p>
-        <p>Currency: {cultureInfo.currency}</p>
+    <>
+      <div className="outer-div h-screen w-[100%] flex">
+        <div className='city-img'>
+          <img src={image} alt={title} />
+        </div>
+
+
+        <div className="info">
+          <div className="info-img">
+            <img src={image} />
+            <div className="overlay"></div>
+          </div>
+
+          <div className="information">
+            <h2>{title}</h2>
+            <p><span>Language: </span>{cultureInfo.language}</p>
+            <p><span>Traditional Food: </span>{cultureInfo.traditionalFood}</p>
+            <p><span>Dance Form: </span>{cultureInfo.danceForm}</p>
+            <p><span>Currency: </span>{cultureInfo.currency}</p>
+            <div className='ff'>
+              <h3>Fun Fact</h3>
+              <p>{funFact}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Fun Fact</h3>
-        <p>{funFact}</p>
-      </div>
-    </div>
+    </>
+
   );
 };
 
