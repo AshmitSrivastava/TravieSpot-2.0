@@ -9,20 +9,6 @@ const Home = () => {
       <div>
         <div className="main-body">
           <div className="section1">
-<<<<<<< HEAD
-            <div className="navbar">
-              <div className="choose-button">
-                <button>Choose for me</button>
-              </div>
-
-              <div className="sign-button">
-                <button>Sign In</button>
-              </div>
-            </div>
-=======
-
-            
->>>>>>> 24dab0a5e28e1fc6a99a674d56e4beaf806e9b94
             <div className="sec1-text">
               Discover story-worthy travel moments
             </div>
