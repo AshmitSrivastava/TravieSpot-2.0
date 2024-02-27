@@ -41,8 +41,8 @@ const App = () => {
           </Routes>
         </CartProvider>
       </BrowserRouter>
-      <Whatsapp/>
       <Footer />
+      <Whatsapp/>
     </>
   );
 };
