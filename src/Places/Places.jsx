@@ -46,7 +46,7 @@ const Places = () => {
   return (
     <>
 
-      {/* <img src={mountains} /> */}
+  
       <div className="input-container">
         <form onSubmit={handleOnSubmit}>
           <input

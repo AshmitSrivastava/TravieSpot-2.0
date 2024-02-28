@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import CardRandom from './CardRandom';
-
+ import "./Random.css"
 const Random = () => {
   const [location, setLocation] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -43,16 +43,16 @@ const Random = () => {
 
   return (
     <>
-    <p className='ml-[25%] '>
-      <h2 className='text-3xl p-2'>Not sure where to go? Let us pick it for you :)</h2>
+    <p >
+      <h2 className='text-3xl p-1.5 mt-7 mb-7'>Not sure where to go? Let us pick it for you :)</h2>
       <form onSubmit={handleOnSubmit}>
         <input
           type='text'
           value={location}
           onChange={handleOnChange}
-          className='bg-slate-600 p-3 text-xl m-1/2 text-white'
+          className='random_search_bar' placeholder='Search here'
         />
-        <button type='submit' className='bg-red-400 p-3 text-xl'>
+        <button type='submit' className='submit_random_button'>
           Submit
         </button>
         

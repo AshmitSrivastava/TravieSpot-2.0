@@ -92,6 +92,10 @@ body {
   /* border: 2px solid black; */
 }
 
+.button-container-sec2{
+  font-weight: bolder;
+}
+
 .button-text-sec2 button:hover {
   background-color: #ffffff;
   color: #000000;
