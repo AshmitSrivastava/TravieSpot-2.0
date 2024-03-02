@@ -19,7 +19,8 @@ import Whatsapp from "./Whatsapp";
 import Services from "./services/Services";
 import Login from "./Login/Login";
 import SignUp from "./Login/SignUp";
-
+import Chatbox from "./Chatbox/Chatbox";
+import ReviewForm from "./ReviewForm/ReviewForm";
 
 const App = () => {
   return (
@@ -44,11 +45,13 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path = "/review" element= {<ReviewForm/>}/>
           </Routes>
         </CartProvider>
       </BrowserRouter>
       <Footer />
       <Whatsapp/>
+      <Chatbox/>
     </>
   );
 };
