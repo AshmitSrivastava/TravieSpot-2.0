@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './UForm.css'; // Make sure to create a corresponding CSS file
+import './UForm.css'; 
 
 const Form = () => {
   const [formData, setFormData] = useState({uname:"", email:"", msg:""});

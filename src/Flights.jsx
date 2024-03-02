@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import FlightCard from './FlightCard';
+import './Flights.css'
 
 const Flights = () => {
   const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ const Flights = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form id='flightsform' onSubmit={handleSubmit}>
         <h2>From: </h2>
         <input
           type='text'

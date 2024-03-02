@@ -17,6 +17,8 @@ import CityDetail from "./CityDetail";
 import UForm from "./UForm";
 import Whatsapp from "./Whatsapp";
 import Services from "./services/Services";
+import Login from "./Login/Login";
+import SignUp from "./Login/SignUp";
 
 
 const App = () => {
@@ -38,6 +40,10 @@ const App = () => {
             <Route path="/know/:id" element={<CityDetail />} />
             <Route path="/uform" element={<UForm />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/uform" element={<UForm />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
