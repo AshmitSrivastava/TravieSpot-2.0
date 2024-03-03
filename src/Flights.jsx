@@ -32,6 +32,24 @@ const Flights = () => {
       const response = await axios.request(options);
       console.log(response.data);
       setResults(response.data.flights || []);
+      console.log(response.data.results[0]);
+      console.log(response.data.results[0].arrivalAirport)
+      {
+        results.map((results,index) => (
+        <FlightCard
+          key={index}
+          from={response.data.results[0].arrivalAirport}
+          to={response.data.results[0].departureAirport.label}
+          fromap={response.data.results[0].departureAirport.label}
+          toap={response.data.results[0].departureAirport.label}
+          cin={response.data.results[0].departureAirport.label}
+          dur={response.data.results[0].duration}
+          fcode={response.data.results[0].departureAirport.label}
+          fname={response.data.results[0].departureAirport.label}
+          stops={response.data.results[0].departureAirport.label}
+          tzone={response.data.results[0].departureAirport.label}
+        />
+      ))}
     } catch (error) {
       console.error(error);
     }
@@ -92,12 +110,14 @@ const Flights = () => {
         <button>Submit</button>
       </form>
 
+      {/* {console.log(response.data)} */}
       {results.map((result, index) => (
         <FlightCard
           key={index}
-          from={result[0].arrivalAirport}
-          to={results[0].departureAirport.label}
-          fromap={result.departureAirport.label}
+          freom = {result[1].cabinType}
+          from={result.arrivalAirport.city}
+          to={setResults[0].departureAirport.label}
+          fromap={results[0].departureAirport.label}
           toap={result.departureAirport.label}
           cin={result.departureAirport.label}
           dur={result[0].duration}

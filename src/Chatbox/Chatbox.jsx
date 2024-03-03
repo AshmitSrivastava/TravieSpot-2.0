@@ -6,7 +6,7 @@ import { FaRobot } from "react-icons/fa";
 const Chatbox = () => {
     const [userMessage, setUserMessage] = useState('');
     const [chatbox, setChatbox] = useState([]);
-    const api_key = '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';
+    const api_key = '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';
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     const generateResponse = async () => {
