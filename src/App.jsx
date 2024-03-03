@@ -21,6 +21,7 @@ import SignUp from "./Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
 import ReviewForm from "./ReviewForm/ReviewForm";
 import Flights from "./Flights/Flights";
+import Trains from "./Trains/Trains";
 import Bye from "./Login/Bye";
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path = "/review" element= {<ReviewForm/>}/>
             <Route path = "/bye" element= {<Bye/>}/>
+            <Route path = "/trains" element= {<Trains/>}/>
 
           </Routes>
         </CartProvider>
