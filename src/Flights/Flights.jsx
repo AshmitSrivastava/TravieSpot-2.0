@@ -40,7 +40,7 @@ const Flights = () => {
         <FlightCard
           key={index}
           from={response.data.results[0].arrivalAirport}
-          to={response.data.results[0].departureAirport.label}
+          /*to={response.data.results[0].departureAirport.label}
           fromap={response.data.results[0].departureAirport.label}
           toap={response.data.results[0].departureAirport.label}
           cin={response.data.results[0].departureAirport.label}
@@ -48,7 +48,7 @@ const Flights = () => {
           fcode={response.data.results[0].departureAirport.label}
           fname={response.data.results[0].departureAirport.label}
           stops={response.data.results[0].departureAirport.label}
-          tzone={response.data.results[0].departureAirport.label}
+          tzone={response.data.results[0].departureAirport.label}*/
         />
       ))}
     } catch (error) {
