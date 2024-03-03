@@ -10,7 +10,6 @@ import Shop from "./Shop";
 import ShopCart from "./ShopCart";
 import { CartProvider } from "react-use-cart";
 import AboutUs from "./AboutUs";
-import Flights from "./Flights";
 import Certificate from "./Certificate";
 import KnowAbout from "./KnowAbout";
 import CityDetail from "./CityDetail";
@@ -21,6 +20,7 @@ import Login from "./Login/Login";
 import SignUp from "./Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
 import ReviewForm from "./ReviewForm/ReviewForm";
+import Flights from "./Flights/Flights";
 import Bye from "./Login/Bye";
 
 const App = () => {

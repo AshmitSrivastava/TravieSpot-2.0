@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 
 const FlightCard = ({from, fromap, to, toap, cin, dur, fcode, fname, stops, tzone}) => {
   return (
@@ -18,6 +18,20 @@ const FlightCard = ({from, fromap, to, toap, cin, dur, fcode, fname, stops, tzon
   )
 }
 
+export default FlightCard*/
+
+import React from 'react'
+
+const FlightCard = ({from}) => {
+  return (
+    <>
+    <h2>From: {from}</h2> 
+    </>
+  )
+}
+
 export default FlightCard
+
+
 
 
