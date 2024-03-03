@@ -21,6 +21,7 @@ import Login from "./Login/Login";
 import SignUp from "./Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
 import ReviewForm from "./ReviewForm/ReviewForm";
+import Bye from "./Login/Bye";
 
 const App = () => {
   return (
@@ -46,6 +47,8 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path = "/review" element= {<ReviewForm/>}/>
+            <Route path = "/bye" element= {<Bye/>}/>
+
           </Routes>
         </CartProvider>
       </BrowserRouter>

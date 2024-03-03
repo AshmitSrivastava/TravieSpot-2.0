@@ -22,7 +22,8 @@ const Flights = () => {
       currency: 'USD',
     },
     headers: {
-      'X-RapidAPI-Key': '47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280',
+      /*'X-RapidAPI-Key': '47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280',*/
+      /*'X-RapidAPI-Key': '47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280',*/
       'X-RapidAPI-Host': 'flight-fare-search.p.rapidapi.com',
     },
   };

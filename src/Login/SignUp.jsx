@@ -38,23 +38,23 @@ const SignUp = () => {
                     <h2 className="text-3xl font-bold mb-8 text-center">Sign Up</h2>
                     <div>
                         <label htmlFor="firstName" className="text-lg font-semibold">First Name</label>
-                        <input type="text" name='fname' value={InputData.fname} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+                        <input type="text" name='fname' value={InputData.fname} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500  focus:text-black text-black" />
                     </div>
                     <div>
                         <label htmlFor="lastName" className="text-lg font-semibold">Last Name</label>
-                        <input type="text" name='lname' value={InputData.lname} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+                        <input type="text" name='lname' value={InputData.lname} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500  focus:text-black text-black" />
                     </div>
                     <div>
                         <label htmlFor="email" className="text-lg font-semibold">Email</label>
-                        <input type="email" name='email' value={InputData.email} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+                        <input type="email" name='email' value={InputData.email} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500  focus:text-black text-black" />
                     </div>
                     <div>
                         <label htmlFor="password" className="text-lg font-semibold">Password</label>
-                        <input type="password" name='pwd' value={InputData.pwd} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+                        <input type="password" name='pwd' value={InputData.pwd} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500  focus:text-black text-black" />
                     </div>
                     <div>
                         <label htmlFor="confirmPassword" className="text-lg font-semibold">Confirm Password</label>
-                        <input type="password" name='cpwd' value={InputData.cpwd} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500" />
+                        <input type="password" name='cpwd' value={InputData.cpwd} onChange={handleOnChange} className="w-full h-10 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 " />
                     </div>
                     <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-full hover:opacity-90 transition-all duration-300 w-10/12 m-7 text-xl" onClick={createUser}>Sign Up</button>
                     <NavLink to='/login'>Already user? Login</NavLink>
