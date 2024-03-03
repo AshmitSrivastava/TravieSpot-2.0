@@ -23,7 +23,7 @@ const Flights = () => {
     },
     headers: {
       /*vaish: 'X-RapidAPI-Key': '47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280',*/
-      /*ash yaha paste kar: 'X-RapidAPI-Key': '47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280',*/
+      /*ash yaha paste kar: 'X-RapidAPI-Key': '631327112amsh701cfdd52be3188p1ef751jsn5a59490a26bb',*/
       'X-RapidAPI-Host': 'flight-fare-search.p.rapidapi.com',
     },
   };
