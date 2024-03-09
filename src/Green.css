@@ -1,0 +1,58 @@
+.travel-page {
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap to the next row */
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+  }
+  
+  .travel-card {
+    width: calc(50% - 50px); /* Adjust width to fit two cards in a row with margin */
+    height: 200px;
+    perspective: 1000px;
+    margin: 25px;
+  }
+  
+  .travel-card .card-front,
+  .travel-card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+  }
+  
+  .travel-card .card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .travel-card.regular .card-front {
+    background-color: #ff6347; /* Regular travel card front color */
+  }
+  
+  .travel-card.green .card-front {
+    background-color: #32cd32; /* Green travel card front color */
+  }
+  
+  .travel-card.regular .card-back {
+    background-color: #ffcccb; /* Regular travel card back color */
+  }
+  
+  .travel-card.green .card-back {
+    background-color: #98fb98; /* Green travel card back color */
+  }
+  
+  .travel-card:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+  
+  .travel-card:hover .card-back {
+    transform: rotateY(0deg);
+  }
+  
+  .travel-card h2,
+  .travel-card p {
+    margin: 10px;
+    color: white;
+  }
+  

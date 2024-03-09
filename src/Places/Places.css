@@ -142,11 +142,11 @@ input::placeholder{
   text-align: left;
 }
 
-/* .places_content_dropdown_content {
+ .places_content_dropdown_content {
   display: none;
-  transition: display 1s;git pull
-}
+  transition: display 1s;
+ }
 
 .places_content_dropdown_head:hover + .places_content_dropdown_content {
   display: block;
-} */
+} 

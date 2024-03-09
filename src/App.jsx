@@ -23,6 +23,8 @@ import ReviewForm from "./ReviewForm/ReviewForm";
 import Flights from "./Flights/Flights";
 import Trains from "./Trains/Trains";
 import Bye from "./Login/Bye";
+import Faq from "./Faq";
+import Green from "./Green";
 
 const App = () => {
   return (
@@ -50,7 +52,8 @@ const App = () => {
             <Route path = "/review" element= {<ReviewForm/>}/>
             <Route path = "/bye" element= {<Bye/>}/>
             <Route path = "/trains" element= {<Trains/>}/>
-
+            <Route path = "/faq" element= {<Faq/>}/>
+            <Route path = "/green" element= {<Green/>}/>
           </Routes>
         </CartProvider>
       </BrowserRouter>

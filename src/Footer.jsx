@@ -15,33 +15,33 @@ const Footer = () => {
           <div className="box">
             <ul>
               <div className="fhead"><span>Home</span></div>
-              <li>What</li>
-              <li>Who</li>
-              <li>Why</li>
+              <li>places</li>
+              <li>Random</li>
+              <li>Know</li>
             </ul>
           </div>
           <div className="box">
             <ul>
               <div className="fhead"><span>Services</span></div>
               <li>Shop</li>
-              <li>Case Study</li>
-              <li>Blog</li>
+              <li>Flights</li>
+              <li>Trains</li>
             </ul>
           </div>
           <div className="box">
             <ul>
               <div className="fhead"><span>Contact Us</span></div>
-              <li>Shop</li>
-              <li>Case Study</li>
-              <li>Blog</li>
+              <li>Cart</li>
+              <li>Log in</li>
+              <li>Sign up</li>
             </ul>
           </div>
           <div className="box">
             <ul>
               <div className="fhead"><span>About Us</span></div>
-              <li>Company</li>
-              <li>Falana</li>
-              <li>Dhimkana</li>
+              <li>FAQ</li>
+              <li>Review</li>
+              <li>Certificate</li>
             </ul>
           </div>
         </div>
