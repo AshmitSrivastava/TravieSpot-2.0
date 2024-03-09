@@ -18,9 +18,7 @@ Bebas Nue Regular 400 - Hero img
   --f-semi-color: rgb(229, 229, 238);
   --f-solid-color: #979797;
 }
-*{
-  cursor:;
-}
+
 *,
 *::before,
 *::after {
@@ -123,7 +121,7 @@ input::placeholder{
 .Places_content{
   color:antiquewhite;
   margin:1rem 15rem 1rem 15rem ;
-  font-family:
+  font-family:sans-serif;
 }
 
 #places_content_h1{

@@ -55,7 +55,8 @@ h1 {
 
 .service h2 {
     font-size: 1.2rem;
-    font-weight: bolder;
+    font-weight: 700;
+    color: #000000;
 }
 
 .service p {
