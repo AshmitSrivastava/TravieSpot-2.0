@@ -117,3 +117,36 @@ input::placeholder{
   gap: 2rem;
 
 }
+
+.Places_content{
+  color:antiquewhite;
+  margin:1rem 15rem 1rem 15rem ;
+  font-family:sans-serif;
+}
+
+#places_content_h1{
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.places_content_p{
+  font-size: 1.4rem;
+
+}
+
+#places_content_h2{
+  margin-top:1rem;
+  font-size:2rem;
+  color:white;
+  text-align: left;
+}
+
+/* .places_content_dropdown_content {
+  display: none;
+  transition: display 1s;git pull
+}
+
+.places_content_dropdown_head:hover + .places_content_dropdown_content {
+  display: block;
+} */

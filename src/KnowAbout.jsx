@@ -17,7 +17,7 @@ const KnowAbout = () => {
                                 <div className="div w-4/6 h-5/6 p-2">
                                 <img src={city.image} alt={city.title} className='rounded-3xl w-[100%] h-[100%] object-cover' />
                                 </div>
-                                <p>{city.title}</p>
+                                <p style={{color:"white"}}>{city.title}</p>
                             </Link>
                         </li>
                     ))}
