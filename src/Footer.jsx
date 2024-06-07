@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="box">
             <ul>
               <div className="fhead"><span>Home</span></div>
-              <li>places</li>
+              <li>Places</li>
               <li>Random</li>
               <li>Know</li>
             </ul>
