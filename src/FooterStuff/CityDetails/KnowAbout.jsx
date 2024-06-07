@@ -1,5 +1,5 @@
 // Import your dataset
-import KnowAboutDataset from './KnowAboutDataset.js';
+import KnowAboutDataset from './KnowAboutDataset';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
