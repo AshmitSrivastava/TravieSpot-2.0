@@ -1,6 +1,6 @@
 import React from 'react'
 import './CertificateCard.css'
-import CertificateImage from './assets/Images/CertificateImage.png';
+import CertificateImage from './CertificateImage.png'
 import { saveAsPng} from 'save-html-as-image';
 const node = document.getElementById('elementId');
 
