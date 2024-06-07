@@ -16,7 +16,7 @@ Bebas Nue Regular 400 - Hero img
   --ff-Hero: "Bebas Neue", sans-serif;
   --f-main: #fff;
   --f-semi-color: rgb(126, 126, 126);
-  --f-solid-color: #000;
+  --f-solid-color: #e728e7;
 }
 
 *,
@@ -92,7 +92,7 @@ body {
   /* border: 2px solid black; */
 }
 
-.button-container-sec2{
+.button-container-sec2 {
   font-weight: bolder;
 }
 
