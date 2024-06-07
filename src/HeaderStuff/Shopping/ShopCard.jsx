@@ -13,7 +13,8 @@ const ShopCard = (props) => {
     });
   };
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-lg m-2">
+    <div className="flex items-center justify-center">
+    <div className="max-w-xs rounded overflow-hidden shadow-lg m-2 bg-white">
       <img
         src={props.src}
         alt="Product"
@@ -32,6 +33,7 @@ const ShopCard = (props) => {
           Add to Cart
         </button>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,7 +3,6 @@ import { useState } from "react";
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
 import { NavLink } from 'react-router-dom';
 import app from './FirebaseConfig'
-import Login from './Login';
 
 
 const auth = getAuth(app)

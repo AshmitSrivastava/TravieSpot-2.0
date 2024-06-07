@@ -33,25 +33,25 @@ function Cart() {
                 <div>
                   <p className="font-semibold">{item.quantity} x {item.name}</p>
                   <p className="text-gray-500">${item.price} ({item.quantity}x)</p>
-                  <p className='text-green-700'>Total Price:({item.price * item.quantity})</p>
+                  <p className='text-green-700'>Total Price:({item.price*item.quantity})</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <button
                   onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                  className="text-blue-500 mr-2 cursor-pointer"
+                  className="text-black mr-2 cursor-pointer w-8 h-8"
                 >
                   -
                 </button>
                 <button
                   onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                  className="text-blue-500 mr-2 cursor-pointer"
+                  className="text-black mr-2 cursor-pointer w-7 h-7"
                 >
                   +
                 </button>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="text-red-500 cursor-pointer"
+                  className="text-red-500 cursor-pointer w-8 h-8"
                 >
                   &times;
                 </button>
