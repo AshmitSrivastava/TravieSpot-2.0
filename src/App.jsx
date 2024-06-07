@@ -19,7 +19,7 @@ import Services from "./HeaderStuff/services/Services";
 import Login from "./HeaderStuff/Login/Login";
 import SignUp from "./HeaderStuff/Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
-import ReviewForm from ".FooterStuff/ReviewForm";
+import ReviewForm from "./FooterStuff/ReviewForm/ReviewForm";
 import Flights from "./FooterStuff/Flights/Flights";
 import Trains from "./FooterStuff/Trains/Trains";
 import Bye from "./HeaderStuff/Login/Bye";
@@ -49,17 +49,17 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path = "/review" element= {<ReviewForm/>}/>
-            <Route path = "/bye" element= {<Bye/>}/>
-            <Route path = "/trains" element= {<Trains/>}/>
-            <Route path = "/faq" element= {<Faq/>}/>
-            <Route path = "/green" element= {<Green/>}/>
+            <Route path="/review" element={<ReviewForm />} />
+            <Route path="/bye" element={<Bye />} />
+            <Route path="/trains" element={<Trains />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/green" element={<Green />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
       <Footer />
-      <Whatsapp/>
-      <Chatbox/>
+      <Whatsapp />
+      <Chatbox />
     </>
   );
 };
