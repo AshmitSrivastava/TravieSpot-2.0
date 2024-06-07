@@ -21,10 +21,11 @@ import SignUp from "./HeaderStuff/Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
 import ReviewForm from "./FooterStuff/ReviewForm/ReviewForm";
 import Flights from "./FooterStuff/Flights/Flights";
-import Trains from "./FooterStuff/Trains/Trains";
+//import Trains from "./FooterStuff/Trains/Trains";
 import Bye from "./HeaderStuff/Login/Bye";
 import Faq from "./FooterStuff/Faq";
 import Green from "./FooterStuff/Green/Green";
+import WeatherCard from './FooterStuff/WeatherCard/WeatherCard';
 
 const App = () => {
   return (
@@ -51,7 +52,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/review" element={<ReviewForm />} />
             <Route path="/bye" element={<Bye />} />
-            <Route path="/trains" element={<Trains />} />
+            <Route path="/WeatherCard" element={<WeatherCard />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/green" element={<Green />} />
           </Routes>
