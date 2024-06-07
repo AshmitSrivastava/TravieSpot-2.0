@@ -1,3 +1,21 @@
-#flightsform h2{
-  color: blueviolet;
+#flightsform h2 {
+  color: white;
+}
+
+#flightsform input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: auto;
+}
+
+#flightsform {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  background-color: plum;
+}
+
+#bg-img {
+  background-color: aliceblue;
 }

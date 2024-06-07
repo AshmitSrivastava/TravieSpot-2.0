@@ -1,6 +1,11 @@
-.flight-card{
-    padding: 2rem;
-    background: #fff;
-    margin: 1.5rem;
-    color: black;
+.flight-card {
+  padding: 10rem;
+  margin: 1.5rem;
+  background-color: purple;
+}
+
+.bg-img {
+  background-image: url("./flightimg.jpeg");
+  background-size: cover;
+  background-position: center;
 }

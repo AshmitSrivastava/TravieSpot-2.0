@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import FlightCard from './FlightCard';
-import './Flights.css';
+import React, { useState } from "react";
+import axios from "axios";
+import FlightCard from "./FlightCard";
+import "./Flights.css";
 
 const Flights = () => {
   const [formData, setFormData] = useState({
-    from: '',
-    to: '',
-    date: '',
-    adults: '',
-    type: '',
+    from: "",
+    to: "",
+    date: "",
+    adults: "",
+    type: "",
   });
 
   const [results, setResults] = useState([]);
 
   const options = {
-    method: 'GET',
-    url: 'https://flight-fare-search.p.rapidapi.com/v2/flights/',
+    method: "GET",
+    url: "https://flight-fare-search.p.rapidapi.com/v2/flights/",
     headers: {
-      'X-RapidAPI-Key': '631327112amsh701cfdd52be3188p1ef751jsn5a59490a26bb',
-      'X-RapidAPI-Host': 'flight-fare-search.p.rapidapi.com',
+      "X-RapidAPI-Key": "631327112amsh701cfdd52be3188p1ef751jsn5a59490a26bb",
+      "X-RapidAPI-Host": "flight-fare-search.p.rapidapi.com",
     },
   };
 
@@ -29,7 +29,7 @@ const Flights = () => {
         ...options,
         params: {
           ...formData,
-          currency: 'USD',
+          currency: "USD",
         },
       });
       console.log(response.data);
@@ -43,7 +43,7 @@ const Flights = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData();
-    console.log('submitted');
+    console.log("submitted");
     console.log(formData);
   };
 
@@ -65,55 +65,56 @@ const Flights = () => {
         toap={result.arrivalAirport.city}
         tocou={result.arrivalAirport.country.label}
         tzone={result.arrivalAirport.timeZone}
-       /* cin={result.baggage.checkIn.allowance}*/
+        /* cin={result.baggage.checkIn.allowance}*/
         dur={result.duration.text}
         fcode={result.flight_code}
         fname={result.flight_name}
-        stops={result.stops}        
-
+        stops={result.stops}
       />
     ));
   };
 
   return (
     <>
-      <form id='flightsform' onSubmit={handleSubmit}>
-        <h2>From: </h2>
-        <input
-          type='text'
-          name='from'
-          value={formData.from}
-          onChange={handleChange}
-        />
-        <h2>To: </h2>
-        <input
-          type='text'
-          name='to'
-          value={formData.to}
-          onChange={handleChange}
-        />
-        <h2>Date: </h2>
-        <input
-          type='date'
-          name='date'
-          value={formData.date}
-          onChange={handleChange}
-        />
-        <h2>Number of Adults: </h2>
-        <input
-          type='number'
-          name='adults'
-          value={formData.adults}
-          onChange={handleChange}
-        />
-        <h2>Type: </h2>
-        <input
-          type='text'
-          name='type'
-          value={formData.type}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
+      <form id="bg-img">
+        <form id="flightsform" onSubmit={handleSubmit}>
+          <h2>From: </h2>
+          <input
+            type="text"
+            name="from"
+            value={formData.from}
+            onChange={handleChange}
+          />
+          <h2>To: </h2>
+          <input
+            type="text"
+            name="to"
+            value={formData.to}
+            onChange={handleChange}
+          />
+          <h2>Date: </h2>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+          />
+          <h2>Number of Adults: </h2>
+          <input
+            type="number"
+            name="adults"
+            value={formData.adults}
+            onChange={handleChange}
+          />
+          <h2>Type: </h2>
+          <input
+            type="text"
+            name="type"
+            value={formData.type}
+            onChange={handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
       </form>
 
       {results.length > 0 && renderFlightCards()}
