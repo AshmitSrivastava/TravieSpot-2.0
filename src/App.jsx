@@ -19,7 +19,7 @@ import Services from "./HeaderStuff/services/Services";
 import Login from "./HeaderStuff/Login/Login";
 import SignUp from "./HeaderStuff/Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
-import ReviewForm from ".FooterStuff/ReviewForm";
+import ReviewForm from "./FooterStuff/ReviewForm";
 import Flights from "./FooterStuff/Flights/Flights";
 import Trains from "./FooterStuff/Trains/Trains";
 import Bye from "./HeaderStuff/Login/Bye";

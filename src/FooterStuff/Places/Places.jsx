@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import mountains from "./img/mountains.jpg";
-import Card from "../Card";
+import Card from "";
 import "./Places.css";
 const Places = () => {
   const [query, setQuery] = useState("");

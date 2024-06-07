@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import 'src/App.css';
 
 function Faq() {
   const [selected, setSelected] = useState(null);
