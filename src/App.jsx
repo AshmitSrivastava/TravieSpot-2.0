@@ -27,9 +27,20 @@ import Faq from "./FooterStuff/Faq";
 import Green from "./FooterStuff/Green/Green";
 
 const App = () => {
+  const navigate = useNavigate();
+
+  const handleClickAbout = () => {
+    navigate("/about");
+  };
+  const handleClickPlaces = () => {
+    navigate("/places");
+  };
   return (
     <>
       <BrowserRouter>
+        <Header>
+          <button onClick={handleClickAbout}>About Us</button>
+        </Header>
         <Header />
         <CartProvider>
           <Routes>
