@@ -8,14 +8,23 @@
   align-items: center;
   max-width: 200px;
   margin: auto;
+  color: rgb(0, 0, 0);
 }
 
 #flightsform {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 150px;
   background-color: plum;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#bg-img {
-  background-color: aliceblue;
+#flibtn
+{
+  
+  background-color: rgb(10, 152, 10);
+  padding: 0.5rem;
+  margin: 1rem;
 }

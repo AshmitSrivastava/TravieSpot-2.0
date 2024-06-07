@@ -76,7 +76,7 @@ const Flights = () => {
 
   return (
     <>
-      <form id="bg-img">
+
         <form id="flightsform" onSubmit={handleSubmit}>
           <h2>From: </h2>
           <input
@@ -113,9 +113,8 @@ const Flights = () => {
             value={formData.type}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" id="flibtn">Submit</button>
         </form>
-      </form>
 
       {results.length > 0 && renderFlightCards()}
     </>
