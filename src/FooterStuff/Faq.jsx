@@ -9,6 +9,7 @@ function Faq() {
       question: "What is React?",
       answer: "React is a JavaScript library for building user interfaces.",
     },
+    
     {
       question: "How do I install React?",
       answer:
