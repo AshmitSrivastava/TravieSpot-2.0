@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import axios from "axios";
-import CardRandom from "../../CardRandom";
+import "./CardRandom";
 import "./Random.css";
-=======
-import React, { useState } from 'react';
-import axios from 'axios';
-import CardRandom from './CardRandom';
- import "./Random.css"
->>>>>>> dc74a4fb9335c92faef7843e3afcdac2456ed09b
 const Random = () => {
   const [location, setLocation] = useState("");
   const [searchResults, setSearchResults] = useState([]);
