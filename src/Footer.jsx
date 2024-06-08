@@ -1,8 +1,13 @@
-import React from "react";
-import "./Footer.css";
-import { FaSquareXTwitter, FaInstagram, FaGithub,FaLinkedin } from "react-icons/fa6";
+import React, { useState, useEffect } from "react";
+import {
+  FaSquareXTwitter,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-import LogoR from './assets/Images/LogoR.png'
+import LogoR from "./assets/Images/LogoR.png";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -14,50 +19,74 @@ const Footer = () => {
           </div>
           <div className="box">
             <ul>
-              <div className="fhead"><span>Home</span></div>
-              <li>Places</li>
-              <li>Random</li>
-              <li>Know</li>
+              <li>
+                <NavLink to="/places">Places</NavLink>
+              </li>
+              <li>
+                <NavLink to="/random">Random</NavLink>
+              </li>
+              <li>
+                <NavLink to="/know">Know</NavLink>
+              </li>
             </ul>
           </div>
           <div className="box">
             <ul>
-              <div className="fhead"><span>Services</span></div>
-              <li>Shop</li>
-              <li>Flights</li>
-              <li>Trains</li>
+              <li>
+                <NavLink to="/shop">Shop</NavLink>
+              </li>
+              <li>
+                <NavLink to="/flights">Flights</NavLink>
+              </li>
+              <li>
+                <NavLink to="/trains">Trains</NavLink>
+              </li>
             </ul>
           </div>
           <div className="box">
             <ul>
-              <div className="fhead"><span>Contact Us</span></div>
-              <li>Cart</li>
-              <li>Log in</li>
-              <li>Sign up</li>
+              <li>
+                <NavLink to="/cart">Cart</NavLink>
+              </li>
+              <li>
+                <NavLink to="/green">Go Green</NavLink>
+              </li>
             </ul>
           </div>
           <div className="box">
             <ul>
-              <div className="fhead"><span>About Us</span></div>
-              <li>FAQ</li>
-              <li>Review</li>
-              <li>Certificate</li>
+              <li>
+                <NavLink to="/faq">FAQ</NavLink>
+              </li>
+              <li>
+                <NavLink to="/review">Review</NavLink>
+              </li>
+              <li>
+                <NavLink to="/certificate">Certificate</NavLink>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="ficons">
-          <a href="https://github.com/"><FaGithub /></a>
-          <a href="https://twitter.com/"><FaSquareXTwitter /></a>
-          <a href="https://www.instagram.com/"><FaInstagram /></a>
-          <a href="https://www.linkedin.com/"><FaLinkedin /></a>
+          <a href="https://github.com/">
+            <FaGithub />
+          </a>
+          <a href="https://twitter.com/">
+            <FaSquareXTwitter />
+          </a>
+          <a href="https://www.instagram.com/">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/">
+            <FaLinkedin />
+          </a>
         </div>
 
         <div id="copy">
           <p>© Copyright since 2024</p>
         </div>
       </div>
-
     </>
   );
 };

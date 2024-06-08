@@ -9,7 +9,6 @@ const Form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-
   const handleSubmit = (e)=>{
       e.preventDefault()
       console.log(formData)
@@ -34,7 +33,7 @@ const Form = () => {
           <textarea id="message" name="msg" placeholder="Type your message" onChange={handleChange} ></textarea>
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" id  = "uform_submit">Submit</button>
       </form>
     </div>
   );
