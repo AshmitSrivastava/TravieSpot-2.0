@@ -1,6 +1,5 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, Form } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -21,28 +20,20 @@ import SignUp from "./HeaderStuff/Login/SignUp";
 import Chatbox from "./Chatbox/Chatbox";
 import ReviewForm from "./FooterStuff/ReviewForm/ReviewForm";
 import Flights from "./FooterStuff/Flights/Flights";
-//import Trains from "./FooterStuff/Trains/Trains";
+// import Trains from "./FooterStuff/Trains/Trains";
 import Bye from "./HeaderStuff/Login/Bye";
 import Faq from "./FooterStuff/Faq";
 import Green from "./FooterStuff/Green/Green";
 import WeatherCard from './FooterStuff/WeatherCard/WeatherCard';
 
 const App = () => {
-  const navigate = useNavigate();
+  
 
-  const handleClickAbout = () => {
-    navigate("/about");
-  };
-  const handleClickPlaces = () => {
-    navigate("/places");
-  };
   return (
     <>
       <BrowserRouter>
         <Header>
-          <button onClick={handleClickAbout}>About Us</button>
         </Header>
-        <Header />
         <CartProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -57,19 +48,17 @@ const App = () => {
             <Route path="/know/:id" element={<CityDetail />} />
             <Route path="/uform" element={<UForm />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/uform" element={<UForm />} />
-            <Route path="/services" element={<Services />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/review" element={<ReviewForm />} />
             <Route path="/bye" element={<Bye />} />
-            <Route path="/WeatherCard" element={<WeatherCard />}/>
+            <Route path="/WeatherCard" element={<WeatherCard />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/green" element={<Green />} />
           </Routes>
         </CartProvider>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
       <Whatsapp />
       <Chatbox />
     </>
