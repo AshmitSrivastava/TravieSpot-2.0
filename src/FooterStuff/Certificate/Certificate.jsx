@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import CertificateCard from './CertificateCard';
-
+import React, { useState } from "react";
+import CertificateCard from "./CertificateCard";
+import "./Certificate.css";
 
 const Certificate = () => {
-  const [uname, setUname] = useState('');
+  const [uname, setUname] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -17,15 +17,34 @@ const Certificate = () => {
 
   return (
     <>
+      <div
+        className="bg-img"
+        style={{
+          backgroundImage: `url(https://w0.peakpx.com/wallpaper/43/30/HD-wallpaper-travel-couple-lifestyle.jpg)`,
+          height: "100vh",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></div>
       <form onSubmit={handleSubmit}>
-        <h3 className='text-white text-4xl ml-60 p-2 mb-5'>Hey, Enter name</h3>
-        <input type='text' onChange={handleChange} value={uname} className='bg-pink-300 w-72 h-10  text-3xl ml-60 mb-16'></input>
-        <button type='submit' className='w-36 bg-red-400 h-9 '>Submit</button>
+        <div className="border">
+          <h3 className="header-text">Hey, Enter name</h3>
+          <input
+            type="text"
+            onChange={handleChange}
+            value={uname}
+            className="input-field"
+          ></input>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </div>
       </form>
 
       {submitted && (
         <div className="certificate">
-          <CertificateCard uName={uname}/>
+          <CertificateCard uName={uname} />
         </div>
       )}
     </>
