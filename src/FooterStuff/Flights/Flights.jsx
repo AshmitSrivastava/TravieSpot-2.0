@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FlightCard from "./FlightCard";
-import "./Flights.css";
 
 const Flights = () => {
   const [formData, setFormData] = useState({
@@ -76,45 +75,56 @@ const Flights = () => {
 
   return (
     <>
-
-        <form id="flightsform" onSubmit={handleSubmit}>
-          <h2>From: </h2>
-          <input
-            type="text"
-            name="from"
-            value={formData.from}
-            onChange={handleChange}
-          />
-          <h2>To: </h2>
-          <input
-            type="text"
-            name="to"
-            value={formData.to}
-            onChange={handleChange}
-          />
-          <h2>Date: </h2>
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-          />
-          <h2>Number of Adults: </h2>
-          <input
-            type="number"
-            name="adults"
-            value={formData.adults}
-            onChange={handleChange}
-          />
-          <h2>Type: </h2>
-          <input
-            type="text"
-            name="type"
-            value={formData.type}
-            onChange={handleChange}
-          />
-          <button type="submit" id="flibtn">Submit</button>
-        </form>
+      <div
+        className="bgimg"
+        style={{
+          backgroundImage: `url(https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895685.jpg)`,
+          height: "100vh",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></div>
+      <form id="flightsform" onSubmit={handleSubmit}>
+        <h2>From: </h2>
+        <input
+          type="text"
+          name="from"
+          value={formData.from}
+          onChange={handleChange}
+        />
+        <h2>To: </h2>
+        <input
+          type="text"
+          name="to"
+          value={formData.to}
+          onChange={handleChange}
+        />
+        <h2>Date: </h2>
+        <input
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+        />
+        <h2>Number of Adults: </h2>
+        <input
+          type="number"
+          name="adults"
+          value={formData.adults}
+          onChange={handleChange}
+        />
+        <h2>Type: </h2>
+        <input
+          type="text"
+          name="type"
+          value={formData.type}
+          onChange={handleChange}
+        />
+        <button type="submit" id="flibtn">
+          Submit
+        </button>
+      </form>
 
       {results.length > 0 && renderFlightCards()}
     </>
