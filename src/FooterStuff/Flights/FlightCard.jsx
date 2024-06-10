@@ -15,16 +15,6 @@ const FlightCard = ({
 }) => {
   return (
     <>
-      <div
-        className="bgimg"
-        style={{
-          backgroundImage: `url(https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895685.jpg)`,
-          height: "100vh",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      ></div>
       <div className="flight-card">
         <h2>From: {from}</h2>
         <h2>FromApname: {fromap}</h2>

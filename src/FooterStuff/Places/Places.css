@@ -8,7 +8,7 @@ Bebas Nue Regular 400 - Hero img
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+/* 
 :root {
   --ff-sec1: "Noto Sans", sans-serif;
   --ff-sec1-medium: "Noto Sans Medium", sans-serif;
@@ -17,21 +17,21 @@ Bebas Nue Regular 400 - Hero img
   --f-main: #fff;
   --f-semi-color: rgb(229, 229, 238);
   --f-solid-color: #979797;
-}
+} */
 
-*,
+/* *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html{
+html {
   width: 100%;
   height: 100%;
-}
+} */
 
- /* .places-box {
+/* .places-box {
   width: 100%;
   height: 100vh;
 } */
@@ -47,106 +47,27 @@ html{
   z-index: -1;
 }  */
 
-.input-container {
-  margin-top: 4rem;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%; /* Ensure the input container takes the full size of the parent */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(2px); /* Apply a backdrop blur to the input container */
+body {
+  height: 1200px;
 }
-
-.cont-1 {
-  padding: 10px;
-}
-
-.query-box,
-.location-box {
-  border: 0.5rem solid black;
-  margin-right: 20px;
-  width: 45%;
-  height: 4.2rem;
-  border-radius: 5rem;
-  padding: 8px;
-  background-color: var(--f-semi-color);
-  filter: blur(0px);
-}
-
-input {
-  padding: 2rem;
-  font-size: 2rem;
+.Places_content {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  height: 90%;
+  padding: 50px;
   text-align: center;
-  align-content: center;
-  color: white;
-  font-size: larger;
-  font-weight: bolder;
+  border-radius: 8px;
 }
 
-input::placeholder{
-  font-size: larger;
-  font-weight: bolder;
+h1 {
+  font-size: 100px;
 }
-
-.search-button {
-  padding: 10px;
-  width: 117px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: var(--f-semi-color);
-  border: 1.7px solid var(--f-solid-color);
-  margin-top: 1rem;
-  position: relative;
-  left: 14rem;
-  font-size: larger;
-  font-weight: bolder;
-}
-
-.search-button:hover {
-  background-color: black;
-  color: white;
-}
-
-
-.result-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-
-}
-
-.Places_content{
-  color:antiquewhite;
-  margin:1rem 15rem 1rem 15rem ;
-  font-family:sans-serif;
-}
-
-#places_content_h1{
-  color: white;
-  font-size: 3rem;
-  text-align: center;
-}
-
-.places_content_p{
-  font-size: 1.4rem;
-
-}
-
-#places_content_h2{
-  margin-top:1rem;
-  font-size:2rem;
-  color:white;
-  text-align: left;
-}
-
- .places_content_dropdown_content {
-  display: none;
-  transition: display 1s;
- }
-
-.places_content_dropdown_head:hover + .places_content_dropdown_content {
-  display: block;
-} 
