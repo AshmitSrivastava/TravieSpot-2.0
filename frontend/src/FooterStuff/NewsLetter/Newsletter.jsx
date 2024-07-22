@@ -71,26 +71,26 @@ const Newsletter = () => {
     //retrieve
     const fetchUsers = async () => {
       try{
-        const response = await axios.get("http://localhost:3000/users");
+        const response = await axios.get("http://localhost:3000/api/newsletter/users");
         //console.log(response);
         setUsers(response.data);
         setShowUsers (true);
         alert("Retreived successfully");
       }
       catch(error){
-        console.error("Error : " , error); 
+        console.error("Error in fetchUsers : " , error); 
       }
     };
 
     //delete
     const handleDelete = async (id) => {
       try{
-        const response = await axios.delete(`http://localhost:3000/users/${id}`);
+        const response = await axios.delete(`http://localhost:3000/api/newsletter/users/${id}`);
         fetchUsers();
         alert("Deleted Successfully!");
       }
       catch(error){
-        console.error("Error : ", error);
+        console.error("Error in handleDelete: ", error);
       }
     };
 
@@ -106,7 +106,7 @@ const Newsletter = () => {
       console.log(selectedUserId);
       if(selectedUserId){
       try{
-        const response = axios.put(`http://localhost:3000/users/${selectedUserId}`, formValues);
+        const response = axios.put(`http://localhost:3000/api/newsletter/users/${selectedUserId}`, formValues);
         console.log(response);
         alert("User Updated Successfully");
         ClearScreen();
@@ -152,14 +152,21 @@ const Newsletter = () => {
       }
     console.log(formValues);
     try{
-        await axios.post('http://localhost:3000/register', formValues);
-
+        const response = await axios.post('http://localhost:3000/api/newsletter/register', formValues);
+        console.log(response);
         alert("User created successfully!");
         ClearScreen();
         fetchUsers();
     }
     catch(error){
-      console.error("Error : ", error);
+      console.error("Error in handleSubmit : ", error);
+      const status = error.response.status;
+      if(status == 400){
+        alert("Duplicating Emails! or password not correct or passwords don't match");
+      }
+      else if (status == 500){
+        alert("Some error occured during registration.");
+      }
     }
   };
 
@@ -173,7 +180,7 @@ const Newsletter = () => {
 
 
     try{
-      const response = await axios.post('http://localhost:3000/upload', formData);
+      const response = await axios.post('http://localhost:3000/api/newsletter/upload', formData);
     }
     catch(error){
       console.error("Error while Uploading File : " + error);

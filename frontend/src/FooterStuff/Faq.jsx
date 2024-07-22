@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import Test from "./Test/Test";
 
 function Faq() {
   const [selected, setSelected] = useState(null);
@@ -32,6 +33,7 @@ function Faq() {
 
   return (
     <div className="faq-container">
+      < Test/>
       {faqs.map((faq, index) => (
         <div key={index} className="faq-card">
           <div
