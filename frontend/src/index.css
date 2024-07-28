@@ -39,4 +39,5 @@ input, textarea, select, button {
 input:focus, textarea:focus, select:focus, button:focus {
   border-color: rgb(225, 236, 14);
   box-shadow: 0 0 0 3px rgba(224, 33,65,0.3);
+  color: aqua;
 }
