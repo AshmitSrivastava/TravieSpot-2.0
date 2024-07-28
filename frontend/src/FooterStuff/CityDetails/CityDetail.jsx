@@ -19,34 +19,25 @@ const CityDetail = () => {
   const { title, image, cultureInfo, funFact } = city;
 
   return (
-    <>
-      <div className="outer-div h-screen w-[100%] flex">
-        <div className='city-img'>
-          <img src={image} alt={title} />
+    
+    <div className="city-detail-container">
+      <div className="city-img-container">
+        <img src={image} alt={title} className="city-img" />
+      </div>
+      <div className="city-info-container">
+        <h2 id='citydetail-title'>{title}</h2>
+        <div className="city-culture-info">
+          <p><span>Language:</span> {cultureInfo.language}</p>
+          <p><span>Traditional Food:</span> {cultureInfo.traditionalFood}</p>
+          <p><span>Dance Form:</span> {cultureInfo.danceForm}</p>
+          <p><span>Currency:</span> {cultureInfo.currency}</p>
         </div>
-
-
-        <div className="info">
-          <div className="info-img">
-            <img src={image} />
-            <div className="overlay"></div>
-          </div>
-
-          <div className="information">
-            <h2>{title}</h2>
-            <p><span>Language: </span>{cultureInfo.language}</p>
-            <p><span>Traditional Food: </span>{cultureInfo.traditionalFood}</p>
-            <p><span>Dance Form: </span>{cultureInfo.danceForm}</p>
-            <p><span>Currency: </span>{cultureInfo.currency}</p>
-            <div className='ff'>
-              <h3>Fun Fact</h3>
-              <p>{funFact}</p>
-            </div>
-          </div>
+        <div className="city-fun-fact">
+          <h3>Fun Fact</h3>
+          <p>{funFact}</p>
         </div>
       </div>
-    </>
-
+    </div>
   );
 };
 

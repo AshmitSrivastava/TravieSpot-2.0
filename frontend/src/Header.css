@@ -74,7 +74,7 @@
 .sign-button button:hover {
   background-color: #000;
   color: #fff;
-  border: 0.1rem solid #fff;
+  /* border: solid #fff; */
 }
 
 .choose-button button {
@@ -98,7 +98,7 @@
     rgba(252, 176, 69, 1) 100%
   );
   color: black;
-  border: transparent solid 0rem;
+  /* border: transparent solid 0rem; */
 }
 
 .logo {
