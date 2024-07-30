@@ -1,0 +1,8 @@
+OAUTH_CLIENTID =  775064276933-tef0g0gevpkopqesgi4khff3s051ir4b.apps.googleusercontent.com
+
+OAUTH_CLIENT_SECRET = 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
+
+
+EMAIL_USERNAME = ashmitsrivastava1607@gmail.com
+
+EMAIL_PASSWORD = timhsa7061

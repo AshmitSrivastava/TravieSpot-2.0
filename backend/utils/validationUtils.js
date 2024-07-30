@@ -31,7 +31,7 @@ const  checkPassword = async (password) => {
   
     if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
       console.log('No special character');
-      return false;
+      return false; 
     }
   
     else {
