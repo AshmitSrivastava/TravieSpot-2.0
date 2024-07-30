@@ -6,7 +6,9 @@ const port = 3000;
 const session = require('express-session');
 const authRoutes = require('./routes/authRoutes');
 const newsLetterRoutes = require('./routes/newsLetterRoutes');
+const cartRoutes = require('./routes/cartRoutes');
 require('dotenv').config({ path: "../frontend/.env" });
+const cookieParser = require('cookie-parser');
 const dbConfig = require('./dbConfig');
 
 const app = express();
@@ -14,7 +16,11 @@ const app = express();
 const upload = require('./middlewares/upload');
 
 //Middlewares
-app.use(cors()); 
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+})); 
+app.use(cookieParser());
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: true }));
 app.use('./uploads', express.static('uploads'));
@@ -28,6 +34,7 @@ app.use(session({
 //Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/newsletter', newsLetterRoutes);
+app.use('/api/cart', cartRoutes);
 
 
 //Startintgnignt

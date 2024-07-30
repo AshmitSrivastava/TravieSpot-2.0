@@ -1,76 +1,100 @@
-// Cart.js
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 import { useCart } from 'react-use-cart';
+import axios from 'axios';
 
-function Cart() {
-  const {
-    isEmpty,
-    totalUniqueItems,
-    items,
-    updateItemQuantity,
-    removeItem,
-  } = useCart();
+const ShopCart = () => {
+  const { addItem, items, updateItemQuantity, removeItem, emptyCart } = useCart();
+  const [isLoading, setIsLoading] = useState(true);
+  const [totalPrice , setTotalPrice] = useState(0);
 
-  const { cartTotal } = useCart();
+  const fetchCart = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/cart' , {withCredentials : true});
+      console.log("Fetched Cart items : ", response.data);
+      emptyCart(); // Clear
+      response.data.forEach( item => {
+        if(item.price){
+          addItem({
+            id : item.id,
+            productId : item.productId,
+            quantity : item.quantity,
+            price : item.price,
+          });
+        }}); // Populate the cart with items from the backend
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching cart:', error);
+      setIsLoading(false);
+    }
+  };
 
-  if (isEmpty) return <p>Your cart is empty</p>;
+  const syncCart = async () => {
+    try {
+      console.log("in synccart within ShopCart ");
+      await axios.post('http://localhost:3000/api/cart/sync', { cart: items } , {withCredentials: true});
+
+    } catch (error) {
+      console.error('Error syncing cart:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      syncCart();
+      calculateTotalPrice();
+    }
+  }, [items, isLoading]);
+
+  const handleLogout = async () => {
+    try{
+      await axios.get('http://localhost:3000/api/auth/logout', {}, {withCredentials: true});
+      alert('logout successful');
+      emptyCart();
+    }catch(err){
+      console.error("Error in handleLogout : ", err);
+    }
+  };
+
+  const calculateTotalPrice = () => {
+    const total = items.reduce((acc , item) => acc + item.price * item.quantity, 0);
+    setTotalPrice(total);
+  };
+
+  const handleIncreaseQuantity = (id, quantity) => {
+    updateItemQuantity(id , quantity + 1);
+  };
+
+  const handleDecreaseQuantity = (id , quantity ) => {
+    if (quantity > 1 ){
+      updateItemQuantity( id , quantity -1 );
+    }
+  };
+
   return (
-    <>
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Cart ({totalUniqueItems})</h1>
-
-        <ul>
-          {items.map((item) => (
-
-            <li key={item.id} className="flex items-center justify-between border-b-2 py-2">
-              <div className="flex items-center">
-                {(
-                  <img
-                    src={item.src}
-                    className="w-12 h-12 object-cover mr-4"
-                  />
-                )}
-                <div>
-                  <p className="font-semibold">{item.quantity} x {item.name}</p>
-                  <p className="text-gray-500">${item.price} ({item.quantity}x)</p>
-                  <p className='text-green-700'>Total Price:({item.price*item.quantity})</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <button
-                  onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                  className="text-black mr-2 cursor-pointer w-8 h-8"
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                  className="text-black mr-2 cursor-pointer w-7 h-7"
-                >
-                  +
-                </button>
-                <button
-                  onClick={() => removeItem(item.id)}
-                  className="text-red-500 cursor-pointer w-8 h-8"
-                >
-                  &times;
-                </button>
-
-              </div>
-
-              
-      {console.log(cartTotal)}
-            </li>
-
-          ))}
-        </ul>
-        <p className='text-3xl'>Total is : {cartTotal}</p>
-      </div>
-
-
-    </>
+    <div className="cart-container">
+      <button onClick={handleLogout}>Logout</button>
+      {items.map(item => (
+        <div key={item.id} className="cart-item">
+          <img src={item.src} alt="Product" className="cart-item-image" />
+          <div className="cart-item-details">
+            <h2>{item.name}</h2>
+            <p>Price: {item.price}</p>
+            <p>Quantity: {item.quantity}</p>
+            <button onClick={() => handleIncreaseQuantity(item.id, item.quantity)}>+</button>
+            <button onClick={() => handleDecreaseQuantity(item.id, item.quantity)}>-</button>
+          </div>
+          <button onClick={() => removeItem(item.id)} className="remove-button">
+            Remove
+          </button>
+        </div>
+      ))}
+      <h3>Total : ${totalPrice.toFixed(2)}</h3>
+    </div>
   );
+};
 
-}
-
-export default Cart;
+export default ShopCart;

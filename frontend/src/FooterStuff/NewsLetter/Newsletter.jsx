@@ -64,9 +64,9 @@ const Newsletter = () => {
     };
 
     //display on load
-    // useEffect( () => {
-    //   fetchUsers();
-    // }, []);
+    useEffect( () => {
+      fetchUsers();
+    }, []);
 
     //retrieve
     const fetchUsers = async () => {
