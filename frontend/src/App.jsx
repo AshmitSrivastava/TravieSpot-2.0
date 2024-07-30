@@ -29,6 +29,8 @@ import Newsletter from "./FooterStuff/NewsLetter/Newsletter";
 import Signup from "./HeaderStuff/Authentication/Signup";
 import Login from "./HeaderStuff/Authentication/Login";
 import Logout from "./HeaderStuff/Authentication/Logout";
+import Vaish from "./FooterStuff/Vaish/Vaish";
+
 const App = () => {
 
   const [isAuthenticated , setisAuthenticated] = useState(false);
@@ -92,6 +94,7 @@ const App = () => {
             <Route path="/login" element = {<Login onLogin={handleLogin}/>}/>
             <Route path="/signup" element = {<Signup/>}/>
             <Route path="/logout" element = {<Logout onLogout={handleLogout}/>}/>
+            <Route path="/vaish" element={<Vaish/>}/>
           </Routes>
         </CartProvider>
       <Footer />
