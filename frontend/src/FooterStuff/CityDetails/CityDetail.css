@@ -1,56 +1,103 @@
-/* CityDetail.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&family=Poppins:wght@600&display=swap');
 
-.outer-div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
+.city-detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #002744;
+  min-height: 100vh;
 }
 
-.city-img, .info-img {
-    position: relative;
-    width: calc((100vw)/2);
-    height: 100vh;
+#citydetail-title{
+    font-size: 3rem;
+    border: 5px solid black;
+    margin:  0px 150px 0px 150px;
+    background-color: #75757587;
 }
 
-.city-img img, .info-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.city-img-container {
+  width: 40%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  margin-right: 100px;
+  border: 7px solid black;
+  border-radius: 5px;
 }
 
-.info {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+.city-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-img {
-    position: relative;
+.city-info-container {
+  background-color: #cacaca;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
 }
 
-.information {
-    background-color: rgba(0, 0, 0, 0.877);
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;  /* to cover the whole container */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: white; 
+.city-info-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #212529;
 }
 
-.information h2{
-    font-size: 5rem;
-    text-align: center;
+.city-culture-info p,
+.city-fun-fact p {
+  font-size: 1.7rem;
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #4e5a66;
+  
 }
 
-.information span
-{
-    color: blue;
+.city-culture-info span {
+  font-weight: 500;
+  color: #272d32;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.city-fun-fact {
+  margin-top: 20px;
+}
+
+.city-fun-fact h3 {
+  font-size: 1.8rem;
+  color: #260034;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .city-detail-container {
+    padding: 10px;
+  }
+
+  .city-img-container {
+    margin-bottom: 10px;
+  }
+
+  .city-info-container {
+    padding: 20px;
+  }
+
+  .city-info-container h2 {
+    font-size: 2rem;
+  }
+
+  .city-culture-info p,
+  .city-fun-fact p {
     font-size: 1rem;
-}
+  }
 
-.ff h3{
-    color: red;
+  .city-fun-fact h3 {
+    font-size: 1.5rem;
+  }
 }

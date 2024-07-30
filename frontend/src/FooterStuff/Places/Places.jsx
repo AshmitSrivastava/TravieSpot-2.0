@@ -45,6 +45,7 @@ const Places = () => {
 
   return (
     <>
+    <div className="places-body">
       <div className="Places_content">
         <h1 id="places_content_h1">Discover Your Perfect Getaway:</h1>
         <p className="places_content_p">
@@ -152,6 +153,7 @@ const Places = () => {
             country={result.location.country}
           />
         ))}
+      </div>
       </div>
     </>
   );

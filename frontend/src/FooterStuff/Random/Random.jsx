@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./CardRandom";
+import CardRandom from "./CardRandom"; // Ensure this matches your actual component file path
 import "./Random.css";
+
 const Random = () => {
   const [location, setLocation] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  let randomIndex = Math.floor(Math.random() * 6);
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
@@ -24,14 +24,8 @@ const Random = () => {
 
     try {
       const response = await axios.request(options);
-      setSearchResults(response.data.results);
-
-      if (response.data.results && response.data.results.length > 0) {
-        randomIndex = Math.floor(Math.random() * response.data.results.length);
-        console.log(response.data.results[randomIndex]);
-      } else {
-        console.error("Invalid response data or index");
-      }
+      setSearchResults(response.data.results || []);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching data from the API", error);
     }
@@ -41,36 +35,73 @@ const Random = () => {
     setLocation(e.target.value);
   };
 
+  const randomIndex = searchResults.length > 0 ? Math.floor(Math.random() * searchResults.length) : 0;
+
   return (
-    <>
-      <p>
-        <h2 className="text-3xl p-1.5 mt-7 mb-7">
-          Not sure where to go? Let us pick it for you :)
-        </h2>
+    <div className="random-body">
+      <div className="Random_content">
+        <h1 id="random_content_h1">Feeling Lucky? Let Us Pick a Spot for You!</h1>
+        <p className="random_content_p">
+          <br />
+          At Traviespot, we believe in adding a bit of spontaneity to your travel plans. If you're
+          unsure of where to go next, let us take the reins and suggest a random spot based on your
+          interests! Our random picker is here to help you discover something new and exciting.
+          <br />
+          <br /> <h2 id="random_content_h2">Here's How It Works:</h2>
+          <br />
+          <ul id="random_content_unorderlist">
+            <li>
+              <div className="random_content_dropdown">
+                <div id="input_query" className="random_content_dropdown_head">
+                  Enter Your Interests
+                </div>
+                <div id="input_query_content" className="random_content_dropdown_content">
+                  Type in what you're interested in or what kind of activities you enjoy. This helps us
+                  tailor our suggestions to match your preferences.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="random_content_dropdown">
+                <div id="discover_random" className="random_content_dropdown_head">
+                  Get a Random Suggestion
+                </div>
+                <div id="discover_random_content" className="random_content_dropdown_content">
+                  Click the button, and let us pick a random spot for you! You might just discover your
+                  next favorite destination.
+                </div>
+              </div>
+            </li>
+          </ul>
+          Whether you're in need of a break from the ordinary or just looking for a surprise, our random
+          suggestion feature is designed to spark adventure and curiosity!
+        </p>
+      </div>
+
+      <div className="input-container">
         <form onSubmit={handleOnSubmit}>
           <input
             type="text"
             value={location}
             onChange={handleOnChange}
-            className="random_search_bar"
-            placeholder="Search here"
+            placeholder="Enter your interests"
+            className="query-box"
           />
-          <button type="submit" className="submit_random_button">
-            Submit
-          </button>
+          <button className="search-button">Find a Spot</button>
         </form>
-      </p>
+      </div>
 
-      {searchResults.length > 0 && (
-        <CardRandom
-          className="top-1/2 left-1/2"
-          title={searchResults[randomIndex].name}
-          address={searchResults[randomIndex].location.formatted_address}
-          category={searchResults[randomIndex].categories[0].name}
-          country={searchResults[randomIndex].location.country}
-        />
-      )}
-    </>
+      <div className="result-container">
+        {searchResults.length > 0 && (
+          <CardRandom
+            title={searchResults[randomIndex].name}
+            address={searchResults[randomIndex].location.formatted_address}
+            category={searchResults[randomIndex].categories[0].name}
+            country={searchResults[randomIndex].location.country}
+          />
+        )}
+      </div>
+    </div>
   );
 };
 

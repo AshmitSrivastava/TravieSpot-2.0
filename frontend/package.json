@@ -18,7 +18,7 @@
     "body-parser": "^1.20.2",
     "caniuse-lite": "^1.0.30001643",
     "cors": "^2.8.5",
-    "create-vite": "^5.2.3",
+    "create-vite": "^5.4.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "firebase": "^10.12.2",

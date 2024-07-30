@@ -1,73 +1,148 @@
-/*
-font-family: "Bebas Neue", sans-serif;
-font-family: "Noto Sans", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:wght@300;500&display=swap");
 
-Noto Sans Medium 500 - Sec1
-Noto Sans Light 300 - Sec2
-Bebas Nue Regular 400 - Hero img
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-/* 
-:root {
-  --ff-sec1: "Noto Sans", sans-serif;
-  --ff-sec1-medium: "Noto Sans Medium", sans-serif;
-  --ff-sec2-light: "Noto Sans Light", sans-serif;
-  --ff-Hero: "Bebas Neue", sans-serif;
-  --f-main: #fff;
-  --f-semi-color: rgb(229, 229, 238);
-  --f-solid-color: #979797;
-} */
-
-/* *,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.places-body{
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('./img/mountains.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-} */
-
-/* .places-box {
-  width: 100%;
-  height: 100vh;
-} */
-
-/* .places-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(2px);
-  z-index: -1;
-}  */
-
-body {
-  height: 1200px;
-}
 .Places_content {
-  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-weight: bold;
   border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 50%;
-  height: 90%;
+  margin: auto;
+  width: 60%;
+  max-width: 800px;
   padding: 50px;
   text-align: center;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
+#places_content_h1 {
+  font-family: "Bebas Neue", sans-serif;
   font-size: 100px;
+  margin: 0;
+}
+
+#places_content_h2 {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.places_content_p {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.places_content_dropdown {
+  margin: 20px 0;
+}
+
+.places_content_dropdown_head {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.places_content_dropdown_content {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  display: none;
+}
+
+#input_query:hover .places_content_dropdown_content,
+#specify_location:hover .places_content_dropdown_content,
+#discover_recommendations:hover .places_content_dropdown_content {
+  display: block;
+}
+
+.input-container {
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.query-box,
+.location-box {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  width: 40%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+.result-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.card-address,
+.card-category,
+.card-country {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
 }
