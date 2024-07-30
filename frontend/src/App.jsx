@@ -26,6 +26,7 @@ import Faq from "./FooterStuff/Faq";
 import Green from "./FooterStuff/Green/Green";
 import WeatherCard from './FooterStuff/WeatherCard/WeatherCard';
 import Newsletter from "./FooterStuff/NewsLetter/Newsletter";
+import Vaish from "./FooterStuff/Vaish/Vaish";
 
 const App = () => {
   
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/faq" element={<Faq />} />
             <Route path="/green" element={<Green />} />
             <Route path="/newsletter" element={<Newsletter /> }/>
+            <Route path="/vaish" element={<Vaish/>}/>
           </Routes>
         </CartProvider>
       <Footer />
