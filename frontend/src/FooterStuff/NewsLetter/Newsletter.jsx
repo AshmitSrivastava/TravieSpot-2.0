@@ -220,89 +220,92 @@ const Newsletter = () => {
 
 
   return (
-    <div>
-      <form id="whole_form">
-        <input type="text" name="username" placeholder="Username" value={formValues.username} onChange={handleChange} required  className="input_box_newsletter"/>
-        <input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange} required className="input_box_newsletter"/>
-        <input type="password" name="password" placeholder="Password" value={formValues.password} onChange={handleChange} required  className="input_box_newsletter"/>
-        <input type="password" name="reconfirm_password" placeholder="Confirm Password" value={formValues.reconfirm_password} onChange={handleChange} required className="input_box_newsletter"/>
-        <select name="gender" value={formValues.gender} onChange={handleChange} required>
-          <option value="">Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-        <select name="criminal_record" value={formValues.criminal_record} onChange={handleChange} required>
-          <option value="">Criminal Record</option>
-          <option value="Y">Yes</option>
-          <option value="N">No</option>
-        </select>
-        <select name="country" value={formValues.country} onChange={handleChange} required>
-          <option value="">Country</option>
-          {countries.map((country) => (
-            <option key={country} value={country}>{country}</option>
-          ))}
-        </select>
-        {formValues.country && !showOtherStateInput && (
-          <select name="state" value={formValues.state} onChange={handleChange} required>
-            <option value="">State</option>
-            {countryStates[formValues.country].map((state) => (
-              <option key={state} value={state}>{state}</option>
-            ))}
-          </select>
-        )}
-        {showOtherStateInput && (
-          <input type="text" name="state" placeholder="State" value={formValues.state} onChange={handleChange} required />
-        )}
-        <input  id  ="tel_newsletter"  type="tel" name="phone" placeholder={`Phone (${phoneExample})`} pattern={phonePattern} value={formValues.phone} onChange={handleChange} required />
-        <input type="file" onChange={handleFileChange} required id="input_file_newsletter"/> 
-
-        div <div className="button_container_newsletter">
-        <button  onClick={event => {
-          onUpload();
-          handleSubmit();
-        }} className="newsletter_button" >Register</button>
-        <button onClick={fetchUsers} className="newsletter_button">Show Users</button>
-        <button className="newsletter_button" onClick={onEdit}>Update</button>
-        <button className="newsletter_button" onClick={ClearScreen}>Clear</button>
-        <button className="newsletter_button" onClick={sortAsc}>Sort Asc</button>
-        <button className="newsletter_button" onClick={sortDesc}>Sort Desc</button>
-        <button className="newsletter_button" onClick={sortById}>Sort By Id</button>
+    <>
+    <div className="news-outercontainer">
+        <div className="news-innercontainer">
+            <div className="news-title">Sign In</div>
+            <form id="whole_form" className="form-grid">
+                <input type="text" name="username" placeholder="Username" value={formValues.username} onChange={handleChange} required className="input_box_newsletter" />
+                <input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange} required className="input_box_newsletter" />
+                <input type="password" name="password" placeholder="Password" value={formValues.password} onChange={handleChange} required className="input_box_newsletter" />
+                <input type="password" name="reconfirm_password" placeholder="Confirm Password" value={formValues.reconfirm_password} onChange={handleChange} required className="input_box_newsletter" />
+                <select name="gender" value={formValues.gender} onChange={handleChange} required className="select_box_newsletter">
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <select name="criminal_record" value={formValues.criminal_record} onChange={handleChange} required className="select_box_newsletter">
+                    <option value="">Criminal Record</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+                <select name="country" value={formValues.country} onChange={handleChange} required className="select_box_newsletter">
+                    <option value="">Country</option>
+                    {countries.map((country) => (
+                        <option key={country} value={country}>{country}</option>
+                    ))}
+                </select>
+                <select name="state" value={formValues.state} onChange={handleChange} required className="select_box_newsletter">
+                    <option value="">State</option>
+                    {formValues.country ? (
+                        countryStates[formValues.country].map((state) => (
+                            <option key={state} value={state}>{state}</option>
+                        ))
+                    ) : (
+                        <option value="">Please select a country first</option>
+                    )}
+                </select>
+                <input id="tel_newsletter" type="tel" name="phone" placeholder={`Phone (${phoneExample})`} pattern={phonePattern} value={formValues.phone} onChange={handleChange} required className="input_box_newsletter" />
+                <input type="file" onChange={handleFileChange} required id="input_file_newsletter" className="input_box_newsletter" />
+                <button type="submit" onClick={event => {
+                    onUpload();
+                    handleSubmit();
+                }} className="news-register_button">Register</button>
+            </form>
+            <div className="button_container_newsletter">
+                <button onClick={fetchUsers} className="newsletter_button">Show Users</button>
+                <button className="newsletter_button" onClick={onEdit}>Update</button>
+                <button className="newsletter_button" onClick={ClearScreen}>Clear</button>
+                <button className="newsletter_button" onClick={sortAsc}>Sort Asc</button>
+                <button className="newsletter_button" onClick={sortDesc}>Sort Desc</button>
+                <button className="newsletter_button" onClick={sortById}>Sort By Id</button>
+            </div>
+            {showUsers && (
+                <table id="newsletter_table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.username}</td>
+                                <td>{user.email}</td>
+                                <td>{user.gender}</td>
+                                <td>{user.country}</td>
+                                <td>{user.state}</td>
+                                <td>{user.phone}</td>
+                                <td>
+                                    <button onClick={() => handleEdit(user)} className="newsletter_button">Edit</button>
+                                    <button onClick={() => handleDelete(user.id)} className="newsletter_button">Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
         </div>
-      </form>
-
-      {showUsers && (
-        <table id="newsletter_table">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Email</th>
-              <th>Gender</th>
-              <th>Country</th>
-              <th>State</th>
-              <th>Phone</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.username}</td>
-                <td>{user.email}</td>
-                <td>{user.gender}</td>
-                <td>{user.country}</td>
-                <td>{user.state}</td>
-                <td>{user.phone}</td>
-                <td>
-                  <button onClick={() => handleEdit(user)} className="newsletter_button">Edit</button>
-                  <button onClick={() => handleDelete(user.id)} className="newsletter_button">Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
     </div>
+</>
+
   );
 };
 
