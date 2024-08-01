@@ -1,59 +1,91 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { Client } from "@gradio/client";
 
-const Vaish = () => {
-  const [prompt, setPrompt] = useState('');
-  const [negativePrompt, setNegativePrompt] = useState('');
-  const [images, setImages] = useState([]);
+const HF_TOKEN = "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"; // Replace with your Hugging Face token
+const textToImageUrl = "https://api-inference.huggingface.co/models/TencentARC/PhotoMaker-V2";
+
+function ImageGenerator() {
+  const [inputTxt, setInputTxt] = useState('');
   const [generatedImage, setGeneratedImage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleFileChange = (event) => {
-    setImages([...event.target.files]);
-  };
+  async function fetchImage(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch image: ${response.statusText}`);
+    }
+    return await response.blob();
+  }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-    images.forEach((image) => {
-      formData.append('images', image);
-    });
-    formData.append('prompt', prompt);
-    formData.append('negativePrompt', negativePrompt);
-
+  async function query(data) {
     try {
-      const response = await axios.post('YOUR_MODEL_API_ENDPOINT', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
+      setLoading(true);
+      setError('');
+      const exampleFile = await fetchImage('https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png');
+      const client = await Client.connect("TencentARC/PhotoMaker-V2");
+
+      const result = await client.predict("/generate_image", {
+        upload_images: exampleFile,
+        prompt: data.prompt,
+        negative_prompt: data.negative_prompt,
+        aspect_ratio_name: "Instagram (1:1)",
+        style_name: "(No style)",
+        num_steps: 20,
+        style_strength_ratio: 15,
+        num_outputs: 1,
+        guidance_scale: 0.1,
+        seed: 0,
+        use_doodle: true,
+        sketch_image: {
+          background: exampleFile,
+          layers: [],
+          composite: null
         },
+        adapter_conditioning_scale: 0.5,
+        adapter_conditioning_factor: 0.5,
       });
 
-      setGeneratedImage(response.data.imageUrl); // Adjust based on your API response
-    } catch (error) {
-      console.error('Error generating image:', error);
+      const objectURL = URL.createObjectURL(result[0]);
+      setGeneratedImage(objectURL);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
+  }
+
+  const handleGenerate = () => {
+    if (!inputTxt.trim()) {
+      setError('Please enter a text prompt.');
+      return;
+    }
+    query({ prompt: inputTxt, negative_prompt: "nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry" });
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+      <div>Image Generator</div>
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="Enter your text prompt here..."
+        value={inputTxt}
+        onChange={(e) => setInputTxt(e.target.value)}
+      />
+      <br />
+      <button onClick={handleGenerate} disabled={loading}>
+        {loading ? 'Generating...' : 'Generate'}
+      </button>
+      {error && <p>{error}</p>}
+      {generatedImage && (
         <div>
-          <label>Prompt:</label>
-          <input type="text" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+          <h2>Generated Image</h2>
+          <img src={generatedImage} alt="Generated" />
         </div>
-        <div>
-          <label>Negative Prompt:</label>
-          <input type="text" value={negativePrompt} onChange={(e) => setNegativePrompt(e.target.value)} />
-        </div>
-        <div>
-          <label>Upload Images:</label>
-          <input type="file" multiple onChange={handleFileChange} />
-        </div>
-        <button type="submit">Generate Image</button>
-      </form>
-      {generatedImage && <img src={generatedImage} alt="Generated" />}
-    </div>
+      )}
+    </>
   );
-};
+}
 
-export default Vaish;
+export default ImageGenerator;
