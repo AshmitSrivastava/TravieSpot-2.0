@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@huggingface/agents": "^0.0.5",
+    "@huggingface/hub": "^0.15.1",
+    "@huggingface/inference": "^2.8.0",
     "@splidejs/react-splide": "^0.7.12",
     "@stripe/react-stripe-js": "^2.5.0",
     "@stripe/stripe-js": "^3.0.3",
@@ -41,6 +44,7 @@
     "swiper": "^11.0.6"
   },
   "devDependencies": {
+    "@gradio/client": "^1.4.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",

@@ -1,0 +1,106 @@
+import React, { useState } from 'react';
+
+const ImageUploadAndLocation = () => {
+    const [image, setImage] = useState(null);
+    const [location, setLocation] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleImageChange = (event) => {
+        setImage(event.target.files[0]);
+    };
+
+    const handleLocationChange = (event) => {
+        setLocation(event.target.value);
+    };
+
+    const handleSubmit = async () => {
+        if (!image || !location) {
+            alert('Please upload an image and enter a location.');
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        const formData = new FormData();
+        formData.append('image', image);
+        formData.append('location', location);
+
+        try {
+            // Upload image and location to your backend
+            const response = await fetch('http://localhost:3000/uploadImg', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                const errorData = await response.text(); // Get the response text for more details
+                throw new Error(`Network response was not ok: ${errorData}`);
+            }
+
+            const result = await response.json();
+            console.log('Backend Response:', result);
+
+            // Assuming the backend processes the image and location and returns a prompt
+            const { prompt } = result;
+
+            // Perform inference using Hugging Face API with TencentARC/PhotoMaker-V2 model
+            const hfResponse = await fetch('https://api-inference.huggingface.co/models/TencentARC/PhotoMaker-V2', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer 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`, // Replace with your actual token
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    inputs: prompt,
+                    parameters: {
+                        negative_prompt: 'blurry'
+                    }
+                })
+            });
+
+            const hfResponseText = await hfResponse.text(); // Read response text
+            console.log('Hugging Face API Response:', hfResponseText);
+
+            if (!hfResponse.ok) {
+                throw new Error(`Hugging Face API response was not ok: ${hfResponseText}`);
+            }
+
+            const hfResult = JSON.parse(hfResponseText); // Parse JSON if response is valid
+            console.log('Hugging Face Inference Result:', hfResult);
+            alert('Image processed successfully!');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to process the image.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <h1>Upload Image and Type Location</h1>
+            <input 
+                type="file" 
+                accept="image/*" 
+                onChange={handleImageChange}
+                style={{ display: 'block', margin: '10px auto' }}
+            />
+            <input 
+                type="text" 
+                placeholder="Enter location" 
+                value={location} 
+                onChange={handleLocationChange}
+                style={{ display: 'block', margin: '10px auto' }}
+            />
+            <button 
+                onClick={handleSubmit} 
+                disabled={isSubmitting}
+                style={{ display: 'block', margin: '10px auto' }}
+            >
+                {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+        </div>
+    );
+};
+
+export default ImageUploadAndLocation;
