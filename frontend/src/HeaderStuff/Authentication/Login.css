@@ -1,0 +1,71 @@
+.login-outercontainer {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #131115; */
+    /* background: linear-gradient(135deg, #000000, #021a29, #03274b); */
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDzk_syr0NszMiGLGCVuDy_x21gH_s2BVaQ&s);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-innercontainer {
+    height: auto;
+    width: 600px;
+    padding: 20px;
+    margin: 2rem 0;
+    background-color: #131115;
+    border: 3px solid aqua;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Roboto;
+}
+
+.login-title{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.login-input-boxes{
+    width: 100%;
+    padding: 12px 15px;
+    margin: 1rem 0rem 1rem 0rem;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #699cb1;
+    font-size: 14px;
+    color: #000000;
+}
+
+.login-input-boxes:focus{
+    outline: none;
+    font-size: 14px; /* Ensures the font size stays the same on focus */
+    color: #000000;
+}
+
+.login-input-boxes::placeholder{
+    color: rgb(0, 0, 0);
+}
+
+#login_btn_ash{
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+    background-color: #bb66d3;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#login_btn_ash:hover {
+    background-color: #000000;
+    color: white;
+}

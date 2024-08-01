@@ -30,6 +30,7 @@ import Signup from "./HeaderStuff/Authentication/Signup";
 import Login from "./HeaderStuff/Authentication/Login";
 import Logout from "./HeaderStuff/Authentication/Logout";
 import Vaish from "./FooterStuff/Vaish/Vaish";
+import Login1 from "./FooterStuff/Test/Test2";
 
 const App = () => {
 
@@ -95,6 +96,7 @@ const App = () => {
             <Route path="/signup" element = {<Signup/>}/>
             <Route path="/logout" element = {<Logout onLogout={handleLogout}/>}/>
             <Route path="/vaish" element={<Vaish/>}/>
+            <Route path="/login1" element={<Login1/>}/>
           </Routes>
         </CartProvider>
       <Footer />

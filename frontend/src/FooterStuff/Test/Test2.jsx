@@ -3,10 +3,9 @@ import { FcGoogle } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import app from './FirebaseConfig';
+import app from '../../HeaderStuff/Login/FirebaseConfig';
 
-
-const Login = () => {
+const Login1 = () => {
     
   const initialData = { email: '', pwd: '' };
   const [dataValue, setDataValue] = useState(initialData);
@@ -93,4 +92,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login1;
