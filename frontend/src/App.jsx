@@ -30,13 +30,9 @@ import Signup from "./HeaderStuff/Authentication/Signup";
 import Login from "./HeaderStuff/Authentication/Login";
 import Logout from "./HeaderStuff/Authentication/Logout";
 import Vaish from "./FooterStuff/Vaish/Vaish";
-<<<<<<< HEAD
-import Login1 from "./FooterStuff/Test/Test2";
-=======
 import Footprint from "./FooterStuff/Footprints/Footprint";
 import Posts from "./FooterStuff/Blog/posts";
 import CreatePost from "./FooterStuff/Blog/create";
->>>>>>> d7816226b01f92b81409ae0fb58e50dbd9bd955d
 
 const App = () => {
 
@@ -102,13 +98,9 @@ const App = () => {
             <Route path="/signup" element = {<Signup/>}/>
             <Route path="/logout" element = {<Logout onLogout={handleLogout}/>}/>
             <Route path="/vaish" element={<Vaish/>}/>
-<<<<<<< HEAD
-            <Route path="/login1" element={<Login1/>}/>
-=======
             <Route path="/footprint" element={<Footprint/>}/>
             <Route path="/posts" element={<Posts/>}/>
             <Route path="/create" element={<CreatePost/>}/>
->>>>>>> d7816226b01f92b81409ae0fb58e50dbd9bd955d
           </Routes>
         </CartProvider>
       <Footer />
