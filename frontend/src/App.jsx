@@ -33,6 +33,7 @@ import Vaish from "./FooterStuff/Vaish/Vaish";
 import Footprint from "./FooterStuff/Footprints/Footprint";
 import Posts from "./FooterStuff/Blog/posts";
 import CreatePost from "./FooterStuff/Blog/create";
+import Hotel from "./FooterStuff/HotelForm/Hotel";
 
 const App = () => {
 
@@ -101,6 +102,7 @@ const App = () => {
             <Route path="/footprint" element={<Footprint/>}/>
             <Route path="/posts" element={<Posts/>}/>
             <Route path="/create" element={<CreatePost/>}/>
+            <Route path="/hotel" element={<Hotel/>}/>
           </Routes>
         </CartProvider>
       <Footer />
