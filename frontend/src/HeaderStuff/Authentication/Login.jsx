@@ -28,7 +28,7 @@ const Login = ({ onLogin }) => {
     <>
     <div className="login-outercontainer">
     <div className="login-innercontainer">
-      <div className="login-title">Login</div>
+      <div className="login-title">Log In</div>
     <form onSubmit={handleSubmit}>
       <input type="email" name="email" value={formValues.email} onChange={handleChange} placeholder="Email" required className="login-input-boxes" />
       <input type="password" name="password" value={formValues.password} onChange={handleChange} placeholder="Password" required className="login-input-boxes" />
