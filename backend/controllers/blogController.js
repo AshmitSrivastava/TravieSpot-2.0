@@ -32,7 +32,7 @@ const createComment = async (req, res) => {
     try {
         console.log("createComment req : ", req.body , req.user.id);
         const { postId, content } = req.body;
-        const userId = req.user.id;
+        const userId =   req.user.id;
         await addComment(userId, postId, content);
         res.status(200).json({ message: 'Comment added successfully' });
     } catch (err) {
