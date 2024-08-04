@@ -31,8 +31,10 @@ import Login from "./HeaderStuff/Authentication/Login";
 import Logout from "./HeaderStuff/Authentication/Logout";
 import Vaish from "./FooterStuff/Vaish/Vaish";
 import Footprint from "./FooterStuff/Footprints/Footprint";
-import Posts from "./FooterStuff/Blog/posts";
-import CreatePost from "./FooterStuff/Blog/create";
+import Post from "./FooterStuff/Blog/Post";
+import NewPost from "./FooterStuff/Blog/NewPost";
+import BlogPage from "./FooterStuff/Blog/BlogPage";
+import NewComment from "./FooterStuff/Blog/NewComment";
 
 const App = () => {
 
@@ -99,8 +101,10 @@ const App = () => {
             <Route path="/logout" element = {<Logout onLogout={handleLogout}/>}/>
             <Route path="/vaish" element={<Vaish/>}/>
             <Route path="/footprint" element={<Footprint/>}/>
-            <Route path="/posts" element={<Posts/>}/>
-            <Route path="/create" element={<CreatePost/>}/>
+            <Route path="/posts" element={<Post/>}/>
+            <Route path="/blogpage" element={<BlogPage/>}/>
+            <Route path="/create" element={<NewPost/>}/>
+            <Route path="/newcomment" element={<NewComment/>}/>
           </Routes>
         </CartProvider>
       <Footer />

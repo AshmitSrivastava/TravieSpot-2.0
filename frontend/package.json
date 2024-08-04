@@ -27,6 +27,7 @@
     "firebase": "^10.12.2",
     "firebase-admin": "^12.1.1",
     "glider-js": "^1.7.8",
+    "gradio": "^0.1.0",
     "html-to-image": "^1.11.11",
     "leaflet": "^1.9.4",
     "lottie-react": "^2.4.0",

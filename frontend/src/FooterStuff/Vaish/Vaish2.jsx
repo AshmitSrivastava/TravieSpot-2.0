@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+//Img to Text
 const HF_TOKEN = "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"; // Replace with your actual token
 const modelUrl = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large";
 
@@ -28,10 +28,8 @@ const ImageCaptioning = () => {
     try {
       // Convert the image file to a Blob
       const imageBlob = new Blob([imageFile], { type: imageFile.type });
-      
       // Log the image Blob
       console.log('Image Blob:', imageBlob);
-
       // Perform inference
       const inferenceResponse = await fetch(modelUrl, {
         method: 'POST',

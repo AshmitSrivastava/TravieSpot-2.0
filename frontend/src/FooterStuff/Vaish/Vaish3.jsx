@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+//Text to img
 const HF_TOKEN = "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";
 const textToImageUrl = "https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4";
 
