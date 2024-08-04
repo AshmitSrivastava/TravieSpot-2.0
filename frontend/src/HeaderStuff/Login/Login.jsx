@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvide
 import { useNavigate } from 'react-router-dom';
 import app from './FirebaseConfig';
 
+
 const Login = () => {
     
   const initialData = { email: '', pwd: '' };
@@ -60,6 +61,7 @@ const Login = () => {
     }
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div className="min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('https://i.pinimg.com/originals/eb/19/a4/eb19a4aaa1ef7bff73e0331f3dff1376.jpg')", padding: '20px' }}>
         <div className="bg-white bg-opacity-30 border rounded-lg p-8 shadow-lg w-full max-w-md">
@@ -87,6 +89,7 @@ const Login = () => {
         </div>
       </div>
     </form>
+    </>
   );
 };
 

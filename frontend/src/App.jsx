@@ -35,6 +35,7 @@ import Post from "./FooterStuff/Blog/Post";
 import NewPost from "./FooterStuff/Blog/NewPost";
 import BlogPage from "./FooterStuff/Blog/BlogPage";
 import NewComment from "./FooterStuff/Blog/NewComment";
+import Hotel from "./FooterStuff/HotelForm/Hotel";
 
 const App = () => {
 
@@ -101,10 +102,8 @@ const App = () => {
             <Route path="/logout" element = {<Logout onLogout={handleLogout}/>}/>
             <Route path="/vaish" element={<Vaish/>}/>
             <Route path="/footprint" element={<Footprint/>}/>
-            <Route path="/posts" element={<Post/>}/>
-            <Route path="/blogpage" element={<BlogPage/>}/>
-            <Route path="/create" element={<NewPost/>}/>
-            <Route path="/newcomment" element={<NewComment/>}/>
+            <Route path="/posts" element={<Posts/>}/>
+            <Route path="/create" element={<CreatePost/>}/>
           </Routes>
         </CartProvider>
       <Footer />

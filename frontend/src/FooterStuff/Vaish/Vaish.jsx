@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Client } from "@gradio/client";
+// import { Client } from "@gradio/client";
 
 const HF_TOKEN = "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"; // Replace with your Hugging Face token
 const textToImageUrl = "https://api-inference.huggingface.co/models/TencentARC/PhotoMaker-V2";

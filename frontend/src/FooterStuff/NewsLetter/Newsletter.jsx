@@ -223,7 +223,7 @@ const Newsletter = () => {
     <>
     <div className="news-outercontainer">
         <div className="news-innercontainer">
-            <div className="news-title">Sign In</div>
+            <div className="news-title">Sign Up for our newsletter</div>
             <form id="whole_form" className="form-grid">
                 <input type="text" name="username" placeholder="Username" value={formValues.username} onChange={handleChange} required className="input_box_newsletter" />
                 <input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange} required className="input_box_newsletter" />
