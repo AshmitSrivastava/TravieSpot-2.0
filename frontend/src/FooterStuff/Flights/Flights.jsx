@@ -20,6 +20,7 @@ const Flights = () => {
       "X-RapidAPI-Key": "47b6ef6d4dmsh52365304ae1b633p171b3cjsn13e9575cd280",
       "X-RapidAPI-Host": "flight-fare-search.p.rapidapi.com",
     },
+    withCredentials: false, // Setting this is set to false cause CORS Error aa raha hai
   };
 
   const fetchData = async () => {
@@ -33,7 +34,6 @@ const Flights = () => {
       });
       console.log(response.data);
       setResults(response.data.results || []);
-      console.log("Yaha se dekho");
     } catch (error) {
       console.error(error);
     }
@@ -47,10 +47,11 @@ const Flights = () => {
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const renderFlightCards = () => {
@@ -64,7 +65,6 @@ const Flights = () => {
         toap={result.arrivalAirport.city}
         tocou={result.arrivalAirport.country.label}
         tzone={result.arrivalAirport.timeZone}
-        /* cin={result.baggage.checkIn.allowance}*/
         dur={result.duration.text}
         fcode={result.flight_code}
         fname={result.flight_name}
